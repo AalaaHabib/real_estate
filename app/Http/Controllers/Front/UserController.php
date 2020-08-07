@@ -39,10 +39,10 @@ class UserController extends Controller
         ]); 
         $user=User::where(['email'=>$request->email , 'password'=> sha1($request->password) ])->first();
         if(null!=$user){
-            //dd($user->id);
+           // dd($user->id);
 
             \Auth::loginUsingId($user->id);
- 
+            
             return redirect(route('homepage'));
         }
         else

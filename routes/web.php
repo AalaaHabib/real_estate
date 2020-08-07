@@ -59,6 +59,13 @@ Route::middleware('admin')->group(function(){
     Route::get('/','HomePageController@index')->name('admin.index');
 
     //Category Crud
+    Route::prefix('/message')->group(function(){
+        //show all category for admin
+        Route::get('/','MessageController@index')->name('adminMessage.index');
+        Route::get('/{id}','MessageController@show')->name('admin.showMess');
+        });
+    
+    //Category Crud
     Route::prefix('/cats')->group(function(){
     //show all category for admin
     Route::get('/','CategoryController@index')->name('adminCats.index');

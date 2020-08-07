@@ -19,8 +19,6 @@ class AuthController extends Controller
         //dd(sha1($request->password));
         $admin=Admin::where(['email'=>$request->email , 'password'=> sha1($request->password) ])->first();
         
-        
-
         if(null!=$admin){ 
             \Auth::guard('admin')->loginUsingId($admin->id);
             //dd($admin->id);

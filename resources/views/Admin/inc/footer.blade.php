@@ -25,5 +25,4 @@
 <script type="text/javascript" src="{{asset('Front/js')}}/script.js"></script>
 </body>
 
-<!-- Mirrored from grandetest.com/theme/findhouse-html/page-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Jun 2020 21:29:25 GMT -->
 </html>

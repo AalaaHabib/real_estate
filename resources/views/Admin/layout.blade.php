@@ -21,7 +21,7 @@
 		        <a href="#" class="navbar_brand float-left dn-smd">
 		            <img class="logo1 img-fluid"src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo.png">
 		            <img class="logo2 img-fluid"src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
-		            <span>FindHouse</span>
+		            <span>3KAR.com</span>
 		        </a>
 		        <!-- Responsive Menu Structure-->
 		        <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
@@ -158,7 +158,7 @@
 		            </li>
 	                <li class="user_setting">
 						<div class="dropdown">
-	                		<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><img class="rounded-circle"src="{{asset('Front/images')}}/team/e1.png" alt="e1.png"> <span class="dn-1199">Ali Tufan</span></a>
+	                		<a class="px-3"><!--<img class="rounded-circle"src="{{asset('Front/images')}}/team/e1.png" alt="e1.png"> --><span class="dn-1199">Aalaa Habib</span></a>
 						    <div class="dropdown-menu">
 						    	<div class="user_set_header">
 						    		<img class="float-left"src="{{asset('Front/images')}}/team/e1.png" alt="e1.png">
@@ -186,7 +186,7 @@
 			<div class="header stylehome1">
 				<div class="main_logo_home2 text-center">
 		            <img class="nav_logo_img img-fluid mt20"src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
-		            <span class="mt20">FindHouse</span>
+		            <span class="mt20">3KAR.com</span>
 				</div>
 				<ul class="menu_bar_home2">
 	                <li class="list-inline-item list_s"><a href="page-register.html"><span class="flaticon-user"></span></a></li>
@@ -314,10 +314,10 @@
 
     <div class="dashboard_sidebar_menu dn-992">
 	    <ul class="sidebar-menu">
-	   		<li class="header"><img src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png"> FindHouse</li>
+	   		<li class="header"><img src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png"> 3KAR.com</li>
 	   		<li class="title"><span>Main</span></li>
 	    	<li class="treeview"><a href="{{route('admin.index')}}"><i class="flaticon-layers"></i><span> Dashboard</span></a></li>
-	      	<li class="treeview"><a href="page-message.html"><i class="flaticon-envelope"></i><span> Message</span></a></li>
+	      	<li class="treeview"><a href="{{route('adminMessage.index')}}"><i class="flaticon-envelope"></i><span> Message</span></a></li>
 	   		<li class="title"><span>Manage Listings</span></li>
 	      	<li class="treeview">
 		        <a href="page-my-properties.html"><i class="flaticon-home"></i> <span>Properties</span></a>
