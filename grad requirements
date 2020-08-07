@@ -1,0 +1,24 @@
+userDashboard - 
+props( CRUD ) Create Read Update Delete 
+User ( CRUD ) Create Read Update Delete
+search history (LOCALSTORAGE) module 
+favourite (LOCALSTORAGE) module
+--------------
+Login socialite ( #Face Google )
+--------------
+Search module 
+--
+=============
+dashboard : 
+siteContent 
+Settings (Table already exists)
+Proberties ( CRU ) Create Read Update  
+Users ( CRU ) Create Read Update [ soft delete ] 
+Contact Us List
+-- 
+==============
+hashing 
+
+ 
+
+

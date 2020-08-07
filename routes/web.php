@@ -72,6 +72,7 @@ Route::middleware('admin')->group(function(){
     Route::get('/delete/{id}','CategoryController@delete')->name('adminCats.delete');
     });
 
+    //Route::resources('cities','LocationController'); 
     //Category Crud
     Route::prefix('/cities')->group(function(){
         //show all category for admin

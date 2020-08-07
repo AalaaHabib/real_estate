@@ -12,7 +12,7 @@ class ContactController extends Controller
 
     function showContact(){
         $data['sett']=Setting::first();
-        return view('Front/contact/showContact')->with($data);
+        return view('Front.contact.showContact')->with($data);
     }
 
     function contactSubscribe(Request $request){
@@ -24,7 +24,7 @@ class ContactController extends Controller
         return back();
     }
 
-    function sendMessage(Request $request){
+    function sendMessage(Request $request){ 
         $data=$request->validate([
             'name'=>'required|string|max:50',
             'email'=>'required|email',
