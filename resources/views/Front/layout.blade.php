@@ -19,6 +19,7 @@
 
 <link href="{{asset('Front/images')}}/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 <link href="{{asset('Front/images')}}/favicon.ico" sizes="128x128" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="https://nafezly.com/css/fontawsome.min.css">
 
 <!-- Title -->
 <title>@yield('title')</title>
@@ -33,9 +34,9 @@
     <![endif]-->
 </head>
 
-@include('Front/includes/header')
+@include('Front.includes.header')
 
 @yield('content')
 
 
-@include('Front/includes/footer')
+@include('Front.includes.footer')

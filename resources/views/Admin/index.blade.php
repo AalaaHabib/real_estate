@@ -17,7 +17,7 @@
 						</div>
 						<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
 							<div class="ff_one">
-								<div class="icon"><span class="flaticon-home"></span></div>
+								<div class="icon py-2"><span class="fal fa-building "></span></div>
 								<div class="detais">
 									<div class="timer">{{$properties}}</div>
 									<p>All Properties</p>
@@ -26,7 +26,7 @@
 						</div>
 						<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
 							<div class="ff_one style2">
-								<div class="icon"><span class="flaticon-view"></span></div>
+								<div class="icon py-2"><span class="fal fa-map-marker-alt"></span></div>
 								<div class="detais">
 									<div class="timer">{{$cities}}</div>
 									<p>Total Cities</p>
@@ -35,7 +35,7 @@
 						</div>
 						<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
 							<div class="ff_one style3">
-								<div class="icon"><span class="flaticon-chat"></span></div>
+								<div class="icon py-2"><span class="fal fa-bars"></span></div>
 								<div class="detais">
 									<div class="timer">{{$cats}}</div>
 									<p>Total Categoriees</p>
@@ -44,7 +44,7 @@
 						</div>
 						<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
 							<div class="ff_one style4">
-								<div class="icon"><span class="flaticon-heart"></span></div>
+								<div class="icon py-2"><span class="fal fa-users pt-2"></span></div>
 								<div class="detais">
 									<div class="timer">{{$users+$agencies}}</div>
 									<p>All Users & companies</p>
