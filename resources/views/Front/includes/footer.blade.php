@@ -1,3 +1,7 @@
+@php 
+$footer_content=\App\SiteContent::select('content')->where('name','=','footer')->first();
+$sett=\App\Setting::first(); 
+@endphp
 
 	<!-- Our Footer -->
 	<section class="footer_one">

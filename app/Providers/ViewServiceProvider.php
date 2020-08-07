@@ -17,7 +17,7 @@ class ViewServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        view()->composer('Front/includes/header',function($view){
+   /*     view()->composer('Front/includes/header',function($view){
             $view->with('cats',Ctegory::select('id','name')->get());
             $view->with('cities',Counrty::select('id','name')->get());
             $view->with('sett',Setting::first());
@@ -26,7 +26,7 @@ class ViewServiceProvider extends ServiceProvider
             $view->with('sett',Setting::first());
             $view->with('footer_content',SiteContent::select('content')->where('name','=','footer')->first());
 
-        });
+        });*/
 
 
     }

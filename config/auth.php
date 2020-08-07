@@ -34,13 +34,13 @@ return [
     | Supported: "session", "token"
     |
     */
-
+    //Admin
     'guards' => [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'web' => [
+        'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
         ],
@@ -70,7 +70,7 @@ return [
     */
 
     'providers' => [
-        'user' => [
+        'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
@@ -101,8 +101,8 @@ return [
     */
 
     'passwords' => [
-        'user' => [
-            'provider' => 'user',
+        'users' => [
+            'provider' => 'users',
             'expire' => 3600,
         ],
         'admins' => [

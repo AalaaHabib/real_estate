@@ -17,12 +17,15 @@ class UserController extends Controller
             'email'=>'required|email',
             'password'=>'required|string',
         ]);
+        //dd($request->password);
         $user=new User();
         $user->UserName=$request->UserName;
         $user->email=$request->email;
-        $user->password=bcrypt($request->password);
+        $user->password=sha1($request->password);
+        if($request->is_Agent!=null)
         $user->is_Agent=$request->is_Agent;
         $user->save();
+        //dd($user);
         return redirect(route('user.login'));
     }
     //login user 
@@ -33,16 +36,17 @@ class UserController extends Controller
         $data=$request->validate([
             'email'=>'required|email',
             'password'=>'required|string',
-        ]);
+        ]); 
+        $user=User::where(['email'=>$request->email , 'password'=> sha1($request->password) ])->first();
+        if(null!=$user){
+            //dd($user->id);
 
-$user=User::where(['email'=>$data['email']])->first();
-dd($user);
-        if(!Auth::attempt(['email'=>$data['email'],'password'=>$data['password']])){
-            return back();
+            \Auth::loginUsingId($user->id);
+ 
+            return redirect(route('homepage'));
         }
-        else{
-           return redirect(route('homepage'));
-        }
+        else
+        return back(); 
     }
 
     function logout(){

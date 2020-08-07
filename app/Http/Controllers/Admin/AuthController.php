@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Admin;
 class AuthController extends Controller
 {
     //
@@ -15,14 +15,24 @@ class AuthController extends Controller
         $data=$request->validate([
             'email'=>'required|email',
             'password'=>'required|string',
-        ]);
+        ]); 
+        //dd(sha1($request->password));
+        $admin=Admin::where(['email'=>$request->email , 'password'=> sha1($request->password) ])->first();
+        
+        
 
-        if(!auth()->attempt(['email'=>$data['email'],'password'=>$data['password']])){
-            return back();
+        if(null!=$admin){ 
+            \Auth::guard('admin')->loginUsingId($admin->id);
+            //dd($admin->id);
+            /*$x= \Auth::guard('admin')->loginUsingId($admin->id); 
+            dd($x);*/
+            if(\Auth::guard('admin')->check()) 
+                return redirect(route('admin.index'));
+            else 
+                dd('fail');
         }
-        else{
-           return redirect(route('admin.index'));
-        }
+        else
+        return back();  
     }
 
     function logout(){

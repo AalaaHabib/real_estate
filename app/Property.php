@@ -23,4 +23,8 @@ class Property extends Model
     public function Agency(){
         return $this->belongsTo('App\Agency');
     }
+
+    public function Pictures(){
+        return $this->hasMany('App\Picture');
+    }
 }

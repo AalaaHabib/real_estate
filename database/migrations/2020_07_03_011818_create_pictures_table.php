@@ -17,7 +17,7 @@ class CreatePicturesTable extends Migration
             $table->id();
             $table->string('img');
             $table->unsignedBigInteger('prop_id');
-            $table->foreign('prop_id')->references('id')->on('properties');
+            $table->foreign('prop_id')->references('id')->on('properties')->onDelete('cascade');
             $table->timestamps();
         });
     }

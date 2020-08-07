@@ -1,6 +1,13 @@
 
 <body>
+	@php 
+	$cats=\App\Ctegory::select('id','name')->get();
+	$cities=\App\Counrty::select('id','name')->get();
+	$sett=\App\Setting::first(); 
+	@endphp
 <div class="wrapper">
+
+
 	<div class="preloader"></div>
 
 	<!-- Main Header Nav -->  
@@ -64,8 +71,8 @@
 		            </li>
 					<li class="last">
 		                <a href="{{route('contact')}}"><span class="title">Contact</span></a>
-					</li>
-			@if(Auth::user())
+					</li> 
+			@if(\Auth::check())
 						<li class="list-inline-item add_listing"><a href="{{route('createProp')}}"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
 						<li><a href="{{route('user.Logout')}}"> <span class="dn-lg">Logout</span></a></li>
 			@else
@@ -108,6 +115,7 @@
 		                        <a href="#">Property in category </a>
 		                        <!-- Level Three-->
 		                        <ul>
+
 									@foreach($cats as $cat)
 		                            <li><a href="{{route('catProp',$cat->id)}}">{{$cat->name}}</a></li>
 									@endforeach
