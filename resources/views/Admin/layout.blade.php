@@ -1,5 +1,7 @@
 @include('Admin/inc/header')
-
+@php 
+	$sett=\App\Setting::first(); 
+@endphp
 <body>
 <div class="wrapper">
 	<div class="preloader"></div>
@@ -20,7 +22,7 @@
 		        <a href="#" class="navbar_brand float-left dn-smd">
 		            <img class="logo1 img-fluid"src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo.png">
 		            <img class="logo2 img-fluid"src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
-		            <span>3KAR.com</span>
+		            <span>{{$sett->logo}}</span>
 		        </a>
 		        <!-- Responsive Menu Structure-->
 		        <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
@@ -185,7 +187,7 @@
 			<div class="header stylehome1">
 				<div class="main_logo_home2 text-center">
 		            <img class="nav_logo_img img-fluid mt20"src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
-		            <span class="mt20">3KAR.com</span>
+		            <span class="mt20">{{$sett->logo}}</span>
 				</div>
 				<ul class="menu_bar_home2">
 	                <li class="list-inline-item list_s"><a href="page-register.html"><span class="flaticon-user"></span></a></li>
@@ -203,7 +205,7 @@
 
     <div class="dashboard_sidebar_menu dn-992 " >
 	    <ul class="sidebar-menu">
-	   		<li class="header"><img src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png"> 3QAR.com</li>
+	   		<li class="header"><img src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png"> {{$sett->logo}}</li>
 	   		<li class="title"><span>Main</span></li>
 	    	<li class="treeview"><a href="{{route('admin.index')}}"><i class="flaticon-layers"></i><span> Dashboard</span></a></li>
 	      	<li class="treeview"><a href="{{route('adminMessage.index')}}"><i class="flaticon-envelope"></i><span> Message</span></a></li>
@@ -222,7 +224,7 @@
 	      	</li>
 	   		<li class="title"><span>Manage Website</span></li>
 		    <li><a href="page-my-packages.html"><i class="flaticon-box"></i> <span>Site Content</span></a></li>
-		    <li><a href="page-my-profile.html"><i class="flaticon-plus"></i> <span>Setting</span></a></li>
+		    <li><a href="{{route('setting.index')}}"><i class="flaticon-plus"></i> <span>Setting</span></a></li>
 	    </ul>
     </div>
 <div class="offset-1">

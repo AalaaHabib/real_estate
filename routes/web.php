@@ -68,15 +68,16 @@ Route::middleware('admin')->group(function(){
         });
     
     Route::prefix('/peoperties')->group(function(){
-        //show all Message for admin
+        //show all Properties for admin
         Route::get('/','propertiesController@index')->name('adminProp.index');
         Route::get('/show/{id}','propertiesController@show')->name('adminProp.show');
         Route::get('/delete/{id}','propertiesController@delete')->name('adminProp.delete');   
         });
     
     Route::prefix('/setting')->group(function(){
-        //show all Message for admin
-        Route::get('/','SiteContentController@index')->name('siteContent.index');  
+        // update website information
+        Route::get('/','SettingController@index')->name('setting.index'); 
+        Route::post('/','SettingController@handle')->name('SettingtHandle'); 
         });
 
     //Category Crud
