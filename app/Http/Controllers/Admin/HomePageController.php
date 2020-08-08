@@ -22,4 +22,5 @@ class HomePageController extends Controller
         $data['admin_name']=Admin::select('userName')->first();
         return view('Admin/index')->with($data);
     }
+    
 }

@@ -15,7 +15,7 @@
 <!-- Responsive stylesheet -->
 <link rel="stylesheet" href="{{asset('Front/css')}}/responsive.css">
 <!-- Title -->
-<title>Real Estate </title>
+<title>3QAR.com </title>
 <!-- Favicon -->
 <link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 <link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" />

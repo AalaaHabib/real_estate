@@ -16,26 +16,26 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="offset-2 col-lg-8 col-xl-8">
-                        <div class="message_container">
-        <div class="user_heading">
+						<div class=" col-lg-12 col-xl-12">
+            <div class="message_container text-bold " style="font:20px">
+        <div class="user_heading text-bold">
             <a href="#">
                 <div class="wrap">
                    <div class="meta">
-                        <h5 class="name">{{$message->title}}</h5>
-                        <p class="preview">has been sending at : <Span class="text-danger">{{$message->created_at}}</span></p>
+                        <h5 class="name p-2">{{$message->title}}</h5>
+                        <p class="preview p-2">has been sending at : <Span class="text-danger">{{$message->created_at}}</span></p>
                     </div>
                 </div>
             </a>
         </div>
-        <div class="inbox_chatting_box">
+        <div class="inbox_chatting_box ">
             <ul class="chatting_content">
                 <li class="media sent">
-                    <div class="media-body">
-                        <div class="date_time">{{$message->name}}</div>
+                    <div class="media-body ">
+                        <div class=" p-2 text-bold">{{$message->name}}</div>
                         <p>{{$message->message}}</p>
-                        <div class="date_time text-danger">Email : {{$message->email}}</div>
-                        <div class="date_time">phone : {{$message->phone}}</div>
+                        <div class="date_time text-danger p-2">Email : {{$message->email}}</div>
+                        <div class="date_time p-2">phone : {{$message->phone}}</div>
                     </div>
                 </li>
             </ul>			

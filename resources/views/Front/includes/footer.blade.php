@@ -83,7 +83,7 @@ $sett=\App\Setting::first();
 				</div>
 				<div class="col-lg-6 col-xl-6">
 					<div class="copyright-widget text-right">
-						<p>© 2020 3KAR.com. Made with love.</p>
+						<p>© 2020 3QAR.com Made with love.</p>
 					</div>
 				</div>
 			</div>

@@ -18,7 +18,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="offset-2 col-lg-8 col-xl-8">
+						<div class=" col-lg-12 col-xl-12">
 							<div class="message_container text-center">
 								<div class="inbox_user_list">
 								
@@ -29,7 +29,8 @@
 												<div class="wrap">
 													<div class="row">
 														<div class="col-3">
-														<a class="btn btn-info px-3 py-1 mb-3" href="{{route('admin.showMess',$mess->id)}}">{{$loop->iteration}}</a>											
+														<a class="btn btn-danger px-3 py-1 mb-3" href="{{route('admin.showMess',$mess->id)}}">{{$loop->iteration}}</a>
+														<a class="btn btn-success px-3 py-1 mb-3" href="{{route('admin.deleteMess',$mess->id)}}">solved</a>											
 													</div>
 													<div class="col-5">
 														<h5 class="name">{{$mess->name}}</h5>

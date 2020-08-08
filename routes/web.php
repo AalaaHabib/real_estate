@@ -57,14 +57,28 @@ Route::middleware('admin')->group(function(){
     Route::get('/logout','AuthController@logout')->name('admin.logout');
     //admin dashboard
     Route::get('/','HomePageController@index')->name('admin.index');
-
-    //Category Crud
+  
+    //Message Operation
     Route::prefix('/message')->group(function(){
-        //show all category for admin
+        //show all Message for admin
         Route::get('/','MessageController@index')->name('adminMessage.index');
+        //show each one 
         Route::get('/{id}','MessageController@show')->name('admin.showMess');
+        Route::get('/delete/{id}','MessageController@delete')->name('admin.deleteMess');
         });
     
+    Route::prefix('/peoperties')->group(function(){
+        //show all Message for admin
+        Route::get('/','propertiesController@index')->name('adminProp.index');
+        Route::get('/show/{id}','propertiesController@show')->name('adminProp.show');
+        Route::get('/delete/{id}','propertiesController@delete')->name('adminProp.delete');   
+        });
+    
+    Route::prefix('/setting')->group(function(){
+        //show all Message for admin
+        Route::get('/','SiteContentController@index')->name('siteContent.index');  
+        });
+
     //Category Crud
     Route::prefix('/cats')->group(function(){
     //show all category for admin
