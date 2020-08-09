@@ -13,9 +13,9 @@ class HomePageController extends Controller
     //
     public function index(){
         $data['properties']=Property::get();
-      
         $data['countries']=Counrty::select('id','name','img')->orderBy('id')->take(4)->get();
         $data['testimonials']=Testimonial::get();
+ 
         //->country id = > 4  withCount(['properties'])
 
         //\Counrty::whereIn('id',[1,2,3,4])->withCount('properties');
@@ -25,7 +25,12 @@ class HomePageController extends Controller
         $data['count_bns']=Property::where('country_id',4)->count();
         $data['count_cairo']=Property::where('country_id',2)->count();
         $data['count_giza']=Property::where('country_id',3)->count();
-
+ 
+        $data['count_alex']=Property::where('country_id',1)->count('country_id');
+        $data['count_bns']=Property::where('country_id',4)->count('country_id');
+        $data['count_cairo']=Property::where('country_id',2)->count('country_id');
+        $data['count_giza']=Property::where('country_id',3)->count('country_id');
+ 
         //cahnge site content
         $data['banner_conent']=SiteContent::select('content')->where('name','banner')->first();
         $data['Featured_conent']=SiteContent::select('content')->where('name','Featured')->first();

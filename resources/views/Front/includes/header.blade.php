@@ -91,7 +91,7 @@
 			<div class="header stylehome1">
 				<div class="main_logo_home2 text-center">
 		            <img class="nav_logo_img img-fluid mt20" src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
-		            <span class="mt20">3KAR.cpm</span>
+		            <span class="mt20">3QAR.com</span>
 				</div>
 				<ul class="menu_bar_home2">
 	                <li class="list-inline-item list_s"><a href=""><span class="flaticon-user"></span></a></li>

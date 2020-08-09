@@ -83,7 +83,7 @@ $sett=\App\Setting::first();
 				</div>
 				<div class="col-lg-6 col-xl-6">
 					<div class="copyright-widget text-right">
-						<p>© 2020 3KAR.com. Made with love.</p>
+						<p>© 2020 3QAR.com Made with love.</p>
 					</div>
 				</div>
 			</div>
@@ -115,5 +115,4 @@ $sett=\App\Setting::first();
 <script type="text/javascript" src="{{asset('Front/js')}}/script.js"></script>
 </body>
 
-<!-- Mirrored from grandetest.com/theme/findhouse-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Jun 2020 21:28:39 GMT -->
 </html>
