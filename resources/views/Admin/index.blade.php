@@ -1,6 +1,4 @@
 @extends('Admin/layout')
-
-
 @section('content')
 <!-- Our Dashbord -->
 
@@ -103,6 +101,6 @@
 				</div>
 			</div>
 		</div>
-	</section>
+</section>
 
 @endsection

@@ -415,43 +415,42 @@ Home Page
 		</div>
 	</section>
 
-
 		<!-- Property Cities -->
 		<section id="property-city" class="property-city pb30">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<div class="main-title text-center">
-						<h2>{{json_decode($Cities_conent->content)->title}}</h2>
-						<p>{{json_decode($Cities_conent->content)->sub_title}}</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-			
-			@foreach($countries as $loc)
-				<div  class=" @if($loc->name == 'cairo'|| $loc->name=='Giza') col-8 @else col-4 @endif">
-					<div class="properti_city">
-						<div class="thumb  w-100 ">
-						<a href="{{route('countryProperty',$loc->id)}}">
-							<img class="img-fluid" src="{{asset('Front/images/property/'.$loc->img)}}" alt="pc1.jpg"></div>
-						</a>
-						<div class="overlay">
-							<div class="details">
-								<h4>{{$loc->name}}</h4>
-								<p>@if($loc->name=='cairo') {{$count_cairo}} Properties 
-									 @elseif($loc->name=='Alex') {{$count_alex}} Properties
-									  @elseif($loc->name=='Giza')  {{$count_giza}} Properties
-									  @else {{$count_bns}} Properties @endif</p>
-
-							</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 offset-lg-3">
+						<div class="main-title text-center">
+							<h2>{{json_decode($Cities_conent->content)->title}}</h2>
+							<p>{{json_decode($Cities_conent->content)->sub_title}}</p>
 						</div>
 					</div>
 				</div>
-			@endforeach
+				<div class="row">
+				
+				@foreach($countries as $loc)
+					<div  class=" @if($loc->name == 'cairo'|| $loc->name=='Giza') col-8 @else col-4 @endif">
+						<div class="properti_city">
+							<div class="thumb  w-100 ">
+							<a href="{{route('countryProperty',$loc->id)}}">
+								<img class="img-fluid" src="{{asset('Front/images/property/'.$loc->img)}}" alt="pc1.jpg"></div>
+							</a>
+							<div class="overlay">
+								<div class="details">
+									<h4>{{$loc->name}}</h4>
+									<p>@if($loc->name=='cairo') {{$count_cairo}} Properties 
+										@elseif($loc->name=='Alex') {{$count_alex}} Properties
+										@elseif($loc->name=='Giza')  {{$count_giza}} Properties
+										@else {{$count_bns}} Properties @endif</p>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				@endforeach
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
 	<!-- Why Chose Us -->
 	<section id="why-chose" class="whychose_us bgc-f7 pb30">
@@ -536,83 +535,6 @@ Home Page
 		</div>
 	</section>
 
-
-	<!-- Our Blog -->
-	<section class="our-blog bgc-f7 pb30">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<div class="main-title text-center">
-						<h2>{{json_decode($artical_conent->content)->title}}</h2>
-						<p>{{json_decode($artical_conent->content)->sub_title}}</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-4 col-xl-4">
-					<div class="for_blog feat_property">
-						<div class="thumb">
-							<img class="img-whp" src="{{asset('Front/images')}}/blog/bh1.jpg" alt="bh1.jpg">
-						</div>
-						<div class="details">
-							<div class="tc_content">
-								<p class="text-thm">Business</p>
-								<h4>Skills That You Can Learn In The Real Estate Market</h4>
-							</div>
-							<div class="fp_footer">
-								<ul class="fp_meta float-left mb0">
-									<li class="list-inline-item"><a href="#"><img src="{{asset('Front/images')}}/property/pposter1.png" alt="pposter1.png"></a></li>
-									<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-								</ul>
-								<a class="fp_pdate float-right" href="#">7 August 2019</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-4">
-					<div class="for_blog feat_property">
-						<div class="thumb">
-							<img class="img-whp" src="{{asset('Front/images')}}/blog/bh2.jpg" alt="bh2.jpg">
-						</div>
-						<div class="details">
-							<div class="tc_content">
-								<p class="text-thm">Business</p>
-								<h4>Bedroom Colors You’ll Never <br class="dn-1199"> Regret</h4>
-							</div>
-							<div class="fp_footer">
-								<ul class="fp_meta float-left mb0">
-									<li class="list-inline-item"><a href="#"><img src="{{asset('Front/images')}}/property/pposter1.png" alt="pposter1.png"></a></li>
-									<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-								</ul>
-								<a class="fp_pdate float-right" href="#">7 August 2019</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-4">
-					<div class="for_blog feat_property">
-						<div class="thumb">
-							<img class="img-whp" src="{{asset('Front/images')}}/blog/bh3.jpg" alt="bh3.jpg">
-						</div>
-						<div class="details">
-							<div class="tc_content">
-								<p class="text-thm">Business</p>
-								<h4>5 Essential Steps for Buying an Investment</h4>
-							</div>
-							<div class="fp_footer">
-								<ul class="fp_meta float-left mb0">
-									<li class="list-inline-item"><a href="#"><img src="{{asset('Front/images')}}/property/pposter1.png" alt="pposter1.png"></a></li>
-									<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-								</ul>
-								<a class="fp_pdate float-right" href="#">7 August 2019</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- Our Partners -->
 	<section id="our-partners" class="our-partners">
 		<div class="container">
@@ -655,7 +577,7 @@ Home Page
 	</section>
 
 	<!-- Start Partners -->
-<section class="start-partners bgc-thm pt50 pb50">
+	<section class="start-partners bgc-thm pt50 pb50">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">

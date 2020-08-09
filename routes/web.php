@@ -6,7 +6,6 @@ Route::namespace('Front')->group(function(){
 
 //index Home Page
 Route::get('/', 'HomePageController@index')->name('homepage');
-
 Route::prefix('/properties')->group(function(){
     //All Properties
     Route::get('/','PropController@allProperties')->name('allProperties');
@@ -18,7 +17,6 @@ Route::prefix('/country')->group(function(){
     Route::get('/{id}','PropController@countryProp')->name('countryProperty');
     Route::get('/{id}/{p_id}','PropController@singleProperty')->name('singleProperty');
 });
-
 //All Property in each Category
 Route::prefix('/category')->group(function(){
     Route::get('/{id}','PropController@catProp')->name('catProp');
@@ -65,7 +63,7 @@ Route::middleware('admin')->group(function(){
         //show each one 
         Route::get('/{id}','MessageController@show')->name('admin.showMess');
         Route::get('/delete/{id}','MessageController@delete')->name('admin.deleteMess');
-        });
+         });
     
     Route::prefix('/peoperties')->group(function(){
         //show all Properties for admin
@@ -73,14 +71,28 @@ Route::middleware('admin')->group(function(){
         Route::get('/show/{id}','propertiesController@show')->name('adminProp.show');
         Route::get('/delete/{id}','propertiesController@delete')->name('adminProp.delete');   
         });
-    
+
+     Route::prefix('/users')->group(function(){
+        //show all users for admin
+        Route::get('/','UserController@index')->name('admin.users.index');
+        Route::get('/agents','UserController@showAgnets')->name('admin.users.agents'); 
+        Route::get('/companies','UserController@showCompanies')->name('admin.users.companies'); 
+        Route::get('/destroy/{id}','UserController@destroy')->name('admin.users.destroy'); 
+        Route::get('/destroyComp/{id}','UserController@destroyCompany')->name('admin.users.destroyComp'); 
+        });
+        
     Route::prefix('/setting')->group(function(){
         // update website information
         Route::get('/','SettingController@index')->name('setting.index'); 
         Route::post('/','SettingController@handle')->name('SettingtHandle'); 
         });
 
-    //Category Crud
+    Route::prefix('/siteContent')->group(function(){
+        // update website information
+        Route::get('/','siteContentController@index')->name('siteContent.index'); 
+        Route::post('/','siteContentController@update')->name('siteContent.update'); 
+        });
+    //Category operation
     Route::prefix('/cats')->group(function(){
     //show all category for admin
     Route::get('/','CategoryController@index')->name('adminCats.index');
@@ -94,7 +106,7 @@ Route::middleware('admin')->group(function(){
     Route::get('/delete/{id}','CategoryController@delete')->name('adminCats.delete');
     });
 
-    //Category Crud
+    //Cities operation
     Route::prefix('/cities')->group(function(){
         //show all category for admin
         Route::get('/','LocationController@index')->name('adminLocations.index');
@@ -107,10 +119,6 @@ Route::middleware('admin')->group(function(){
         //Delete Category
         Route::get('/delete/{id}','LocationController@delete')->name('adminLocations.delete');
         });
-
-
 });
-
-
 });
 
