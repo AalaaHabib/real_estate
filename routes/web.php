@@ -2,6 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 
+/*-----------------------Peter's Routes----------------------------*/
+
+
+Route::get('profile','Front\UserController@profile')->name('my.profile');
+
+
+
+
+
+
+
+/*-------------------End Peter's Routes----------------------------*/
+
+
+
+
 Route::namespace('Front')->group(function(){
 
 //index Home Page
