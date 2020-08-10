@@ -3,12 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 /*-----------------------Peter's Routes----------------------------*/
-
-
 Route::get('profile','Front\UserController@profile')->name('my.profile');
-
-
-
+Route::resource('property','Front\PropController')->except("create");
+Route::get('properties/','Front\PropController@allProperties')->name('allProperties');
+Route::get('property/create','Front\PropController@create')->name("createProp");
 
 
 
@@ -16,18 +14,11 @@ Route::get('profile','Front\UserController@profile')->name('my.profile');
 /*-------------------End Peter's Routes----------------------------*/
 
 
-
-
 Route::namespace('Front')->group(function(){
 
 //index Home Page
 Route::get('/', 'HomePageController@index')->name('homepage');
-Route::prefix('/properties')->group(function(){
-    //All Properties
-    Route::get('/','PropController@allProperties')->name('allProperties');
-    //create new property
-    Route::get('/create','PropController@createProp')->name('createProp');
-});
+
 //All property in each country
 Route::prefix('/country')->group(function(){
     Route::get('/{id}','PropController@countryProp')->name('countryProperty');
@@ -83,9 +74,9 @@ Route::middleware('admin')->group(function(){
     
     Route::prefix('/peoperties')->group(function(){
         //show all Properties for admin
-        Route::get('/','propertiesController@index')->name('adminProp.index');
-        Route::get('/show/{id}','propertiesController@show')->name('adminProp.show');
-        Route::get('/delete/{id}','propertiesController@delete')->name('adminProp.delete');   
+        Route::get('/','PropertiesController@index')->name('adminProp.index');
+        Route::get('/show/{id}','PropertiesController@show')->name('adminProp.show');
+        Route::get('/delete/{id}','PropertiesController@delete')->name('adminProp.delete');   
         });
 
      Route::prefix('/users')->group(function(){

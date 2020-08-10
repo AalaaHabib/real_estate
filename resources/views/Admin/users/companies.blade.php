@@ -34,9 +34,17 @@
 											<li><a href="#">Office: {{$company->taxNumber}}</a></li>
 											<li><a href="#">Mobile: {{$company->phone}}</a></li>
 											<li><a href="#">Fax: {{$company->faxNumber}}</a></li>
-											<li><a href="#">Email: <span class="__cf_email__" data-cfemail="b8c8d9d3cdd4d4d9f8ded1d6dcd0d7cdcbdd96dbd7d5">{{$company->email}}</span></a></li>
-                                            <a href="{{route('admin.users.destroy',$company->id)}}" class="btn btn-danger float-right ">Destroy</a>
+											<li><a href="#">Email: <span class="__cf_email__" data-cfemail="b8c8d9d3cdd4d4d9f8ded1d6dcd0d7cdcbdd96dbd7d5">{{$company->email}}</span>
+												
                                         </ul>
+
+                                        <div class="col-12 px-0 pt-2 text-center d-flex justify-content-center"> 
+											<a href="{{route('admin.users.destroy',$company->id)}}" class="btn btn-danger float-right d-inline-block " style="border-radius: 20px"> 
+												<span class="fal fa-trash" style="color: #fff;"></span> Destroy
+											</a>
+
+										</div>
+
 									</div>
 									<div class="fp_footer">
 										<ul class="fp_meta d-flex justify-content-around">

@@ -22,8 +22,7 @@ Profile
 							<div class="col-12 py-2 text-center" style="" >
 								<span class="fal fa-user " style="font-size: 200px;"></span>
 							</div>
-						</div> 
-
+						</div>  
 
 						<div class="col-12 px-0 mb-2" style="box-shadow: 0px 0px 12px #ddd;border-radius: 30px;background: #fff;">
 							<div class="col-12 py-2" style="" >
@@ -60,10 +59,8 @@ Profile
 					</div>
 					<div class="col-9">
 						<div class="col-12 px-0 mb-2" style="box-shadow: 0px 0px 12px #ddd;border-radius: 10px;background: #fff;min-height: 80vh">
-							<div class="col-12 px-0"   >
-								<div class="col-12 border-bottom   py-3">
-									Profile
-								</div>
+							<div class="col-12 px-0"   > 
+								@yield('content') 
 							</div>
 						</div> 
 					</div>

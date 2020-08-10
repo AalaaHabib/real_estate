@@ -43,7 +43,8 @@
 									<div class="col-xl-10">
 										<form method="post" action="{{route('siteContent.update')}}">
 											@csrf
-											<div class="row">									
+											<div class="row">	
+												<input type="hidden" name="type" value="banner">								
 												<div class="col-lg-6 col-xl-6">
 													<div class="my_profile_setting_input form-group">
 														<label for="formGroupExampleInput1">Title</label>

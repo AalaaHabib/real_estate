@@ -19,22 +19,15 @@ class siteContentController extends Controller
         $data['registerFooter']=SiteContent::select('content')->where('name','registerFooter')->first();
         $data['footer']=SiteContent::select('content')->where('name','footer')->first();
         
-        return view('admin.siteContent.editWebsiteContent')->with($data);
+        return view('Admin.siteContent.editWebsiteContent')->with($data);
     }
     function update(Request $request ){
-
-
-
         $data=array(
             'title'=>$request->banner_titile,
+            'paragraph'=>$request->paragraph,
             'sub_title'=>$request->banner_subtitile,
-        );
-       /* foreach($data['banner'] as $key=>$value){
-            $k[]=$key;
-            $v[]="'".$value."'";
-        }
-        $k=implode(",",$k);
-        $v=implode(",",$v); */
-        SiteContent::where('id', 1)->update(['banner' => json_decode($data)]);
+        ); 
+        SiteContent::where('name', $request->type)->update(['content' => json_encode($data)]);
+        return back()->with('data',['alert'=>'success','alert-type'=>'success']);
     }
 }

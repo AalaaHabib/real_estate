@@ -1,6 +1,7 @@
 @extends('Admin/layout')
 @section('content')
 	<!-- Our Dashbord -->
+    
 	<section class="our-dashbord dashbord bgc-f7 pb50">
 		<div class="container-fluid">
 			<div class="row">
@@ -34,7 +35,7 @@
 						</div>
 						<div class="col-lg-12">
 							<div class="my_dashboard_review">
-                                @include('admin.inc.errors')
+                                @include('Admin.inc.errors')
                             <form method="post" action="{{route('SettingtHandle')}}">
                                 @csrf
 								<div class="row">

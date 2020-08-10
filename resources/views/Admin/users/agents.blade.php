@@ -18,7 +18,9 @@
 						<div class="col-md-4 col-lg-4">
 							<div class="feat_property home7 agency">
 								<div class="thumb">
-									<img class="img-fluid" src="{{asset('uploads/users/Agent'.$agent->img)}}" alt="1.jpg">
+									<img class="img-fluid" 
+									{{-- {{asset('uploads/users/Agent'.$agent->img)}} --}}
+									src="https://nafezly.com/site_images/user.png" alt="1.jpg">
 								</div>
 								<div class="details">
 									<div class="tc_content">
@@ -30,8 +32,17 @@
 											<li><a href="#">Mobile: {{$agent->phone}}</a></li>
 											<li><a href="#">Fax: {{$agent->faxNumber}}</a></li>
 											<li><a href="#">Email: <span class="__cf_email__" data-cfemail="b8c8d9d3cdd4d4d9f8ded1d6dcd0d7cdcbdd96dbd7d5">{{$agent->email}}</span></a></li>
-                                            <a href="{{route('admin.users.destroy',$agent->id)}}" class="btn btn-danger float-right ">Destroy</a>
+                                           
                                         </ul>
+
+                                        <div class="col-12 px-0 pt-2 text-center d-flex justify-content-center"> 
+											<a href="{{route('admin.users.destroy',$agent->id)}}" class="btn btn-danger float-right d-inline-block " style="border-radius: 20px"> 
+												<span class="fal fa-trash" style="color: #fff;"></span> Destroy
+											</a>
+
+										</div>
+
+
 									</div>
 									<div class="fp_footer">
 									<ul class="fp_meta  d-flex justify-content-around">

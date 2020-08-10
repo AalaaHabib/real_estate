@@ -12,7 +12,7 @@
 		    <nav>
 		        <!-- Menu Toggle btn-->
 		        <div class="menu-toggle">
-		            <img class="nav_logo_img img-fluid"src="{{asset('Front/images')}}/header-logo.png" alt="header-logo.png">
+		            <img class="nav_logo_img img-fluid"src="{{asset('Front/images')}}/header-logo.png"  >
 		            <button type="button" id="menu-btn">
 		                <span class="icon-bar"></span>
 		                <span class="icon-bar"></span>
@@ -20,14 +20,14 @@
 		            </button>
 		        </div>
 		        <a href="#" class="navbar_brand float-left dn-smd">
-		            <img class="logo1 img-fluid"src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo.png">
-		            <img class="logo2 img-fluid"src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
-		            <span>{{$sett->logo}}</span>
+		            <img class="logo1 img-fluid"src="{{asset('Front/images')}}/header-logo2.png"  >
+		            <img class="logo2 img-fluid"src="{{asset('Front/images')}}/header-logo2.png"  >
+		            {{-- <span>{{$sett->logo}}</span> --}}
 		        </a>
 		        <!-- Responsive Menu Structure-->
 		        <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
 		        <ul id="respMenu" class="ace-responsive-menu text-right" data-menu-style="horizontal">
-					<li >
+					{{-- <li >
 		                <a href="page-contact.html"><span class="title">Dashboard</span></a>
 					</li>
 					<li >
@@ -42,22 +42,22 @@
 					<li >
 		                <a href="page-contact.html"><span class="title">cities</span></a>
 		            </li>
-				
-					<li>
+				 --}}
+					{{-- <li>
 		                <a href="#"><span class="title">Users</span></a>
 		                <ul>
 							<li><a href="page-add-new-property.html">All User</a></li>
 							<li><a href="page-add-new-property.html">Agents</a></li>
 							<li><a href="page-add-new-property.html">Companies</a></li>
 		                </ul>
-		            </li>
-					<li class="last">
+		            </li> --}}
+					{{-- <li class="last">
 		                <a href="page-contact.html"><span class="title">site content</span></a>
 		            </li>
 		            <li class="last">
 		                <a href="page-contact.html"><span class="title">setting</span></a>
-		            </li>
-	                <li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span class="dn-lg"> Logout</span></a></li>
+		            </li> --}}
+	                <li class="list-inline-item add_listing mt-2"><a href="{{route('admin.logout')}}"><span class="dn-lg"> Logout</span></a></li>
 		        </ul>
 		    </nav>
 		</div>
@@ -68,7 +68,7 @@
 		<div class="mobile-menu">
 			<div class="header stylehome1">
 				<div class="main_logo_home2 text-center">
-		            <img class="nav_logo_img img-fluid mt20"src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
+		            <img class="nav_logo_img img-fluid mt20"src="{{asset('Front/images')}}/header-logo2.png" >
 		            <span class="mt20">{{$sett->logo}}</span>
 				</div>
 				<ul class="menu_bar_home2">
@@ -106,7 +106,7 @@
 		        </ul>
 	      	</li>
 	   		<li class="title"><span>Manage Website</span></li>
-		    <li><a href="page-my-packages.html"><i class="flaticon-box"></i> <span>Site Content</span></a></li>
+		    <li><a href="{{route('siteContent.index')}}"><i class="flaticon-box"></i> <span>Site Content</span></a></li>
 		    <li><a href="{{route('setting.index')}}"><i class="flaticon-plus"></i> <span>Setting</span></a></li>
 	    </ul>
     </div>

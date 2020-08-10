@@ -11,6 +11,43 @@ use App\Ctegory;
 class PropController extends Controller
 {
 
+    public function index(Request $request){
+        return view('Front.User.index-property');
+    }
+    public function create(Request $request){
+        return view('Front.User.create-property');
+    }
+    public function store(Request $request){
+        Property::create($request->except('_token'));
+        return route('property.index')->with('data',['alert'=>'seccess']);
+    }
+    public function edit(Request $request,Property $prop){
+        return view('Front.User.edit-property',compact('prop'));
+    } 
+    public function show(Request $request,Property $prop){
+        return view('Front.User.show-property',compact('prop'));
+    }
+    public function update(Request $request,Property $prop){
+        $prop->update($request->except('_token'));
+        return route('property.index')->with('data',['alert'=>'seccess']);
+    }
+    public function delete(Request $request,Property $prop){
+        $prop->delete();
+        return route('property.index')->with('data',['alert'=>'seccess']);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     function  allProperties(){
         $data['properties']=property::paginate(6);
         return view('Front/Property/allProperties')->with($data);
