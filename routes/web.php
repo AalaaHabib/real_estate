@@ -2,6 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 
+/*-----------------------Peter's Routes----------------------------*/
+
+
+Route::get('profile','Front\UserController@profile')->name('my.profile');
+
+
+
+
+
+
+
+/*-------------------End Peter's Routes----------------------------*/
+
+
+
+
 Route::namespace('Front')->group(function(){
 
 //index Home Page
@@ -79,6 +95,7 @@ Route::middleware('admin')->group(function(){
     Route::get('/delete/{id}','CategoryController@delete')->name('adminCats.delete');
     });
 
+    //Route::resources('cities','LocationController'); 
     //Category Crud
     Route::prefix('/cities')->group(function(){
         //show all category for admin

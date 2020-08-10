@@ -53,5 +53,21 @@ class UserController extends Controller
         Auth::logout();
         return redirect(route('homepage'));
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function profile(Request $request){
+        return view('Front.User.profile');
+    }
    
 }
