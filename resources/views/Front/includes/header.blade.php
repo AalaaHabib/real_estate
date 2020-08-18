@@ -1,11 +1,12 @@
 
-<body>
+<body> 
 	@php 
 	$cats=\App\Ctegory::select('id','name')->get();
 	$cities=\App\Counrty::select('id','name')->get();
 	$sett=\App\Setting::first(); 
 	@endphp
 <div class="wrapper">
+
 
 
 	<div class="preloader"></div>
@@ -140,3 +141,7 @@
 			</ul>
 		</nav>
 	</div>
+
+
+
+ 

@@ -2,9 +2,9 @@
 @section('content')
 <section class="our-dashbord dashbord bgc-f7 pb50">
 		<div class="container-fluid ovh">
-			<div class="row">
-				<div class="col-lg-3 col-xl-2 dn-992 pl0"></div>
-				<div class="col-lg-9 col-xl-10 maxw100flex-992">
+			<div class="container">
+				 
+				<div class="col-lg-12 maxw100flex-992">
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="dashboard_navigationbar dn db-992">
@@ -33,78 +33,179 @@
 						</div>
 						<div class="col-lg-12">
 							<div class="my_dashboard_review">
-								<div class="row">
-									<div class="col-lg-12">
-										<h4 class="mb30">Create Listing</h4>
-										<div class="my_profile_setting_input form-group">
-									    	<label for="propertyTitle">Property Title</label>
-									    	<input type="text" class="form-control" id="propertyTitle">
+								<form method="POST" action="{{route('property.store')}}" enctype="multipart/form-data" >
+									@csrf
+									 
+									<div class="row">
+										<div class="col-lg-12">
+											<h4 class="mb30">Create Listing</h4>
+											<div class="my_profile_setting_input form-group">
+										    	<label for="propertyTitle">Property Title</label>
+										    	<input type="text" class="form-control" id="propertyTitle" name="title">
+											</div>
 										</div>
-									</div>
-									<div class="col-lg-12">
-										<div class="my_profile_setting_textarea">
-										    <label for="propertyDescription">Description</label>
-										    <textarea class="form-control" id="propertyDescription" rows="7"></textarea>
+										<div class="col-lg-12">
+											<div class="my_profile_setting_textarea">
+											    <label for="propertyDescription">Description</label>
+											    <textarea class="form-control" id="propertyDescription" rows="7" name="desc"></textarea>
+											</div>
 										</div>
-									</div>
-									<div class="col-lg-6 col-xl-6">
-										<div class="my_profile_setting_input ui_kit_select_search form-group">
-									    	<label>Type</label>
-											<select class="selectpicker" data-live-search="true" data-width="100%">
-												<option data-tokens="type1">Type1</option>
-												<option data-tokens="Type2">Type2</option>
-												<option data-tokens="Type3">Type3</option>
-												<option data-tokens="Type4">Type4</option>
-												<option data-tokens="Type5">Type5</option>
-											</select>
+										<div class="col-lg-6 col-xl-6">
+											<div class="my_profile_setting_input ui_kit_select_search form-group">
+										    	<label>Type</label>
+												<select name="category_id" class="selectpicker" data-live-search="true" data-width="100%">
+													@php 
+													$cats=\App\Ctegory::get();
+													@endphp
+													@foreach($cats as $cat)
+													<option value="{{$cat->id}}">{{$cat->name}}</option>
+													@endforeach 
+												</select>
+											</div>
 										</div>
-									</div>
-									<div class="col-lg-6 col-xl-6">
-										<div class="my_profile_setting_input ui_kit_select_search form-group">
-									    	<label>Status</label>
-											<select class="selectpicker" data-live-search="true" data-width="100%">
-												<option data-tokens="Status1">Status1</option>
-												<option data-tokens="Status2">Status2</option>
-												<option data-tokens="Status3">Status3</option>
-												<option data-tokens="Status4">Status4</option>
-												<option data-tokens="Status5">Status5</option>
-											</select>
+										<div class="col-lg-6 col-xl-6">
+											<div class="my_profile_setting_input ui_kit_select_search form-group">
+										    	<label>Status</label>
+												<select name="status" class="selectpicker" data-live-search="true" data-width="100%">
+													<option value="rent">Rent</option>
+													<option value="buy">Buy</option> 
+												</select>
+											</div>
 										</div>
-									</div>
-									<div class="col-lg-4 col-xl-4">
-										<div class="my_profile_setting_input form-group">
-									    	<label for="formGroupExamplePrice">Price</label>
-									    	<input type="text" class="form-control" id="formGroupExamplePrice">
+										<div class="col-lg-3 col-xl-3">
+											<div class="my_profile_setting_input form-group">
+										    	<label for="formGroupExamplePrice">Price</label>
+										    	<input type="number" class="form-control" id="formGroupExamplePrice" name="price">
+											</div>
 										</div>
-									</div>
-									<div class="col-lg-4 col-xl-4">
-										<div class="my_profile_setting_input form-group">
-									    	<label for="formGroupExampleArea">Area</label>
-									    	<input type="text" class="form-control" id="formGroupExampleArea">
+										<div class="col-lg-3 col-xl-3">
+											<div class="my_profile_setting_input form-group">
+										    	<label for="formGroupExampleArea">Area</label>
+										    	<input type="number" class="form-control" id="formGroupExampleArea" name="size">
+											</div>
 										</div>
-									</div>
-									<div class="col-lg-4 col-xl-4">
-										<div class="my_profile_setting_input ui_kit_select_search form-group">
-									    	<label>Rooms</label>
-											<select class="selectpicker" data-live-search="true" data-width="100%">
-												<option data-tokens="Status1">1</option>
-												<option data-tokens="Status2">2</option>
-												<option data-tokens="Status3">3</option>
-												<option data-tokens="Status4">4</option>
-												<option data-tokens="Status5">5</option>
-												<option data-tokens="Status6">Other</option>
-											</select>
+										<div class="col-lg-3 col-xl-3">
+											<div class="my_profile_setting_input ui_kit_select_search form-group">
+										    	<label>Rooms</label>
+												<select class="selectpicker" data-live-search="true" data-width="100%" name="Room_num">
+													@for($i=1;$i<6;$i++)
+													<option value="{{$i}}">{{$i}}</option>
+													@endfor 
+												</select>
+											</div>
 										</div>
-									</div>
-									<div class="col-xl-12">
-										<div class="my_profile_setting_input">
-											<button class="btn btn1 float-left">Back</button>
-											<button class="btn btn2 float-right">Next</button>
+
+
+										<div class="col-lg-3 col-xl-3">
+											<div class="my_profile_setting_input ui_kit_select_search form-group">
+										    	<label>Bathroom Numbers</label>
+												<select class="selectpicker" data-live-search="true" data-width="100%" name="bathRoom_num">
+													@for($i=1;$i<3;$i++)
+													<option value="{{$i}}">{{$i}}</option>
+													@endfor 
+												</select>
+											</div>
 										</div>
-									</div>
-								</div>
+
+
+										<div class="col-lg-12"> 
+											<div class="my_profile_setting_input form-group">
+										    	<label for="propertyAddress">Address</label>
+										    	<input type="text" class="form-control" id="propertyAddress" name="address">
+											</div>
+										</div>
+
+										<div class="col-lg-12"> 
+											<div class="my_profile_setting_input ui_kit_select_search form-group">
+										    	<label for="propertyAddress">city</label>
+										    	<select class="selectpicker" data-live-search="true" data-width="100%" name="country_id">
+													@php 
+													$countrys=\App\Counrty::get();
+													@endphp
+													@foreach($countrys as $country)
+													<option value="{{$country->id}}">{{$country->name}}</option>
+													@endforeach 
+												</select> 
+											</div>
+										</div>
+
+
+										
+
+										<hr>
+
+										<div class="col-12 row px-0">
+											 
+										
+
+										<div class="col-12 col-lg-6">
+											 <div class="col-lg-12"> 
+												<div class="my_profile_setting_input form-group">
+											    	<label for="propertyAddressx">Main img</label>
+											    	<input type="file" class="form-control" id="propertyAddressx" name="main_imgx">
+												</div>
+											</div>
+
+										</div>
+
+
+										<div class="col-12 col-lg-6 row "> 
+											 <div class="col-lg-12 col-xl-6"> 
+												<div class="my_profile_setting_input form-group">
+											    	<label for="propertyAddress1">Image 1 </label>
+											    	<input type="file" class="form-control" id="propertyAddress1" name="image[]">
+												</div>
+											</div>
+											<div class="col-lg-12 col-xl-6"> 
+												<div class="my_profile_setting_input form-group">
+											    	<label for="propertyAddressd">Image 2 </label>
+											    	<input type="file" class="form-control" id="propertyAddressd" name="image[]">
+												</div>
+											</div>
+											<div class="col-lg-12 col-xl-6"> 
+												<div class="my_profile_setting_input form-group">
+											    	<label for="propertyAddressd">Image 3 </label>
+											    	<input type="file" class="form-control" id="propertyAddressd" name="image[]">
+												</div>
+											</div>
+											<div class="col-lg-12 col-xl-6"> 
+												<div class="my_profile_setting_input form-group">
+											    	<label for="propertyAddressd">Image 4 </label>
+											    	<input type="file" class="form-control" id="propertyAddressd" name="image[]">
+												</div>
+											</div> 
+										</div>
+
+										
+
+										</div>
+
+
+
+
+
+
+										<!--
+											<div class="col-lg-12"> 
+												<div class="my_profile_setting_input form-group">
+											    	<label for="propertyAddress">agency_id</label>
+											    	<input type="text" class="form-control" id="propertyAddress" name="agency_id">
+												</div>
+											</div>
+										--> 
+									</div> 
+									<div class="col-12 px-0 row">
+										<div class="col-12">
+											<button class="btn btn-success py-2 px-5 "> 
+												<span class="d-inline-block px-4">Submit</span>
+											 </button>
+										</div>
+									</div> 
+								</form>
 							</div>
-							<div class="my_dashboard_review mt30">
+
+
+							{{-- <div class="my_dashboard_review mt30">
 								<div class="row">
 									<div class="col-lg-12">
 										<h4 class="mb30">Location</h4>
@@ -501,8 +602,9 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 						</div>
+
 					</div>
 					<div class="row mt50">
 						<div class="col-lg-12">

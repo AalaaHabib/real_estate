@@ -8,11 +8,44 @@ use App\User;
 
 class UserController extends Controller
 {
+
+    // Default Auth
+    public function showLoginForm(){
+        return view('Front.User.login');
      //register a new user
-     function register(){
+    }
+
+    public function showRegistrationForm(){
+        return view('Front.User.register');
+     //register a new user
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function register(){
         return view('Front.User.register');
     }
-    function handleRegister(Request $request){
+    public function handleRegister(Request $request){
         $data=$request->validate([
             'email'=>'required|email',
             'password'=>'required|string',
@@ -29,10 +62,10 @@ class UserController extends Controller
         return redirect(route('user.login'));
     }
     //login user 
-    function login(){
+    public function login(){
         return view('Front.User.login');
     }
-    function handleLogin(Request $request){
+    public function handleLogin(Request $request){
         $data=$request->validate([
             'email'=>'required|email',
             'password'=>'required|string',
@@ -49,7 +82,7 @@ class UserController extends Controller
         return back(); 
     }
 
-    function logout(){
+    public function logout(){
         Auth::logout();
         return redirect(route('homepage'));
     }

@@ -3,16 +3,32 @@
 use Illuminate\Support\Facades\Route;
 
 /*-----------------------Peter's Routes----------------------------*/
-Route::get('profile','Front\UserController@profile')->name('my.profile');
-Route::resource('property','Front\PropController')->except("create");
 Route::get('properties/','Front\PropController@allProperties')->name('allProperties');
-Route::get('property/create','Front\PropController@create')->name("createProp");
-
-
+Route::middleware('auth')->group(function(){
+  Route::get('profile','Front\UserController@profile')->name('my.profile');  
+  Route::resource('property','Front\PropController');
+  Route::get('property/create','Front\PropController@create')->name("createProp");
+});
 
 
 /*-------------------End Peter's Routes----------------------------*/
 
+
+// Authentication Routes...
+Route::get('login', 'Front\UserController@showLoginForm')->name('login');
+Route::post('login', 'Front\UserController@login');
+Route::post('logout', 'Front\UserController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', 'Front\UserController@showRegistrationForm')->name('register');
+Route::post('register', 'Front\UserController@register');
+
+// Password Reset Routes...
+/*Route::get('password/reset', 'Front\UserController\ForgotPasswordController@showLinkRequestForm');
+Route::post('password/email', 'Front\UserController\ForgotPasswordController@sendResetLinkEmail');
+Route::get('password/reset/{token}', 'Front\UserController\ResetPasswordController@showResetForm');
+Route::post('password/reset', 'Front\UserController\ResetPasswordController@reset');
+*/
 
 Route::namespace('Front')->group(function(){
 
