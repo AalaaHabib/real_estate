@@ -3,38 +3,43 @@
 use Illuminate\Support\Facades\Route;
 
 /*-----------------------Peter's Routes----------------------------*/
-
-
-Route::get('profile','Front\UserController@profile')->name('my.profile');
-
-
-
-
-
+Route::get('properties/','Front\PropController@allProperties')->name('allProperties');
+Route::middleware('auth')->group(function(){
+  Route::get('profile','Front\UserController@profile')->name('my.profile');  
+  Route::resource('property','Front\PropController');
+  Route::get('property/create','Front\PropController@create')->name("createProp");
+});
 
 
 /*-------------------End Peter's Routes----------------------------*/
 
 
+// Authentication Routes...
+Route::get('login', 'Front\UserController@showLoginForm')->name('login');
+Route::post('login', 'Front\UserController@login');
+Route::post('logout', 'Front\UserController@logout')->name('logout');
 
+// Registration Routes...
+Route::get('register', 'Front\UserController@showRegistrationForm')->name('register');
+Route::post('register', 'Front\UserController@register');
+
+// Password Reset Routes...
+/*Route::get('password/reset', 'Front\UserController\ForgotPasswordController@showLinkRequestForm');
+Route::post('password/email', 'Front\UserController\ForgotPasswordController@sendResetLinkEmail');
+Route::get('password/reset/{token}', 'Front\UserController\ResetPasswordController@showResetForm');
+Route::post('password/reset', 'Front\UserController\ResetPasswordController@reset');
+*/
 
 Route::namespace('Front')->group(function(){
 
 //index Home Page
 Route::get('/', 'HomePageController@index')->name('homepage');
 
-Route::prefix('/properties')->group(function(){
-    //All Properties
-    Route::get('/','PropController@allProperties')->name('allProperties');
-    //create new property
-    Route::get('/create','PropController@createProp')->name('createProp');
-});
 //All property in each country
 Route::prefix('/country')->group(function(){
     Route::get('/{id}','PropController@countryProp')->name('countryProperty');
     Route::get('/{id}/{p_id}','PropController@singleProperty')->name('singleProperty');
 });
-
 //All Property in each Category
 Route::prefix('/category')->group(function(){
     Route::get('/{id}','PropController@catProp')->name('catProp');
@@ -73,15 +78,44 @@ Route::middleware('admin')->group(function(){
     Route::get('/logout','AuthController@logout')->name('admin.logout');
     //admin dashboard
     Route::get('/','HomePageController@index')->name('admin.index');
-
-    //Category Crud
+  
+    //Message Operation
     Route::prefix('/message')->group(function(){
-        //show all category for admin
+        //show all Message for admin
         Route::get('/','MessageController@index')->name('adminMessage.index');
+        //show each one 
         Route::get('/{id}','MessageController@show')->name('admin.showMess');
-        });
+        Route::get('/delete/{id}','MessageController@delete')->name('admin.deleteMess');
+         });
     
-    //Category Crud
+    Route::prefix('/peoperties')->group(function(){
+        //show all Properties for admin
+        Route::get('/','PropertiesController@index')->name('adminProp.index');
+        Route::get('/show/{id}','PropertiesController@show')->name('adminProp.show');
+        Route::get('/delete/{id}','PropertiesController@delete')->name('adminProp.delete');   
+        });
+
+     Route::prefix('/users')->group(function(){
+        //show all users for admin
+        Route::get('/','UserController@index')->name('admin.users.index');
+        Route::get('/agents','UserController@showAgnets')->name('admin.users.agents'); 
+        Route::get('/companies','UserController@showCompanies')->name('admin.users.companies'); 
+        Route::get('/destroy/{id}','UserController@destroy')->name('admin.users.destroy'); 
+        Route::get('/destroyComp/{id}','UserController@destroyCompany')->name('admin.users.destroyComp'); 
+        });
+        
+    Route::prefix('/setting')->group(function(){
+        // update website information
+        Route::get('/','SettingController@index')->name('setting.index'); 
+        Route::post('/','SettingController@handle')->name('SettingtHandle'); 
+        });
+
+    Route::prefix('/siteContent')->group(function(){
+        // update website information
+        Route::get('/','siteContentController@index')->name('siteContent.index'); 
+        Route::post('/','siteContentController@update')->name('siteContent.update'); 
+        });
+    //Category operation
     Route::prefix('/cats')->group(function(){
     //show all category for admin
     Route::get('/','CategoryController@index')->name('adminCats.index');
@@ -95,24 +129,23 @@ Route::middleware('admin')->group(function(){
     Route::get('/delete/{id}','CategoryController@delete')->name('adminCats.delete');
     });
 
+ 
     //Route::resources('cities','LocationController'); 
     //Category Crud
+ 
+    //Cities operation 
     Route::prefix('/cities')->group(function(){
-        //show all category for admin
-        Route::get('/','LocationController@index')->name('adminLocations.index');
-        //create new category
-        Route::get('/create','LocationController@create')->name('adminLocations.create');
-        Route::post('/store','LocationController@store')->name('adminLocations.store');
-        //update one category
-        Route::get('/edit/{id}','LocationController@edit')->name('adminLocations.edit');
-        Route::post('/update/{id}','LocationController@update')->name('adminLocations.update');
-        //Delete Category
-        Route::get('/delete/{id}','LocationController@delete')->name('adminLocations.delete');
-        });
-
-
-});
-
-
+            //show all category for admin
+            Route::get('/','LocationController@index')->name('adminLocations.index');
+            //create new category
+            Route::get('/create','LocationController@create')->name('adminLocations.create');
+            Route::post('/store','LocationController@store')->name('adminLocations.store');
+            //update one category
+            Route::get('/edit/{id}','LocationController@edit')->name('adminLocations.edit');
+            Route::post('/update/{id}','LocationController@update')->name('adminLocations.update');
+            //Delete Category
+            Route::get('/delete/{id}','LocationController@delete')->name('adminLocations.delete');
+            });
+    });
 });
 

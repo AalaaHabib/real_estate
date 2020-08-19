@@ -83,7 +83,7 @@ $sett=\App\Setting::first();
 				</div>
 				<div class="col-lg-6 col-xl-6">
 					<div class="copyright-widget text-right">
-						<p>© 2020 3KAR.com. Made with love.</p>
+						<p>© 2020 3QAR.com Made with love.</p>
 					</div>
 				</div>
 			</div>
@@ -94,7 +94,8 @@ $sett=\App\Setting::first();
 <!-- Wrapper End -->
 
 
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="{{asset('Front/js')}}/jquery-3.3.1.js"></script>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script type="text/javascript" src="{{asset('Front/js')}}/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="{{asset('Front/js')}}/jquery-migrate-3.0.0.min.js"></script>
 <script type="text/javascript" src="{{asset('Front/js')}}/popper.min.js"></script>
 <script type="text/javascript" src="{{asset('Front/js')}}/bootstrap.min.js"></script>
@@ -113,6 +114,11 @@ $sett=\App\Setting::first();
 <script type="text/javascript" src="{{asset('Front/js')}}/timepicker.js"></script>
 <!-- Custom script for all pages --> 
 <script type="text/javascript" src="{{asset('Front/js')}}/script.js"></script>
+<script>
+	$('.hide-me-on-click').on('click',function(){
+		$(this).slideUp('fast');
+	});
+</script>
 </body>
 
 </html>

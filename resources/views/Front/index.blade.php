@@ -69,205 +69,10 @@ Home Page
 												  	</div>
 												</div>
 											</li>
-											<li class="custome_fields_520 list-inline-item">
-												<div class="navbered">
-												  	<div class="mega-dropdown">
-													    <span id="show_advbtn" class="dropbtn">Advanced <i class="flaticon-more pl10 flr-520"></i></span>
-													    <div class="dropdown-content">
-													      	<div class="row p15">
-													      		<div class="col-lg-12">
-													      			<h4 class="text-thm3">Amenities</h4>
-													      		</div>
-														        <div class="col-xxs-6 col-sm col-lg col-xl">
-													                <ul class="ui_kit_checkbox selectable-list">
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck1">
-																				<label class="custom-control-label" for="customCheck1">Air Conditioning</label>
-																			</div>
-													                	</li>
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck2">
-																				<label class="custom-control-label" for="customCheck2">Lawn</label>
-																			</div>
-													                	</li>
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck3">
-																				<label class="custom-control-label" for="customCheck3">Swimming Pool</label>
-																			</div>
-													                	</li>
-													                </ul>
-														        </div>
-														        <div class="col-xxs-6 col-sm col-lg col-xl">
-													                <ul class="ui_kit_checkbox selectable-list">
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck4">
-																				<label class="custom-control-label" for="customCheck4">Barbeque</label>
-																			</div>
-													                	</li>
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck5">
-																				<label class="custom-control-label" for="customCheck5">Microwave</label>
-																			</div>
-													                	</li>
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck6">
-																				<label class="custom-control-label" for="customCheck6">TV Cable</label>
-																			</div>
-													                	</li>
-													                </ul>
-														        </div>
-														        <div class="col-xxs-6 col-sm col-lg col-xl">
-													                <ul class="ui_kit_checkbox selectable-list">
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck7">
-																				<label class="custom-control-label" for="customCheck7">Dryer</label>
-																			</div>
-													                	</li>
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck8">
-																				<label class="custom-control-label" for="customCheck8">Outdoor Shower</label>
-																			</div>
-													                	</li>
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck9">
-																				<label class="custom-control-label" for="customCheck9">Washer</label>
-																			</div>
-													                	</li>
-													                </ul>
-														        </div>
-														        <div class="col-xxs-6 col-sm col-lg col-xl">
-													                <ul class="ui_kit_checkbox selectable-list">
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck10">
-																				<label class="custom-control-label" for="customCheck10">Gym</label>
-																			</div>
-													                	</li>
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck11">
-																				<label class="custom-control-label" for="customCheck11">Refrigerator</label>
-																			</div>
-													                	</li>
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck12">
-																				<label class="custom-control-label" for="customCheck12">WiFi</label>
-																			</div>
-													                	</li>
-													                </ul>
-														        </div>
-														        <div class="col-xxs-6 col-sm col-lg col-xl">
-													                <ul class="ui_kit_checkbox selectable-list">
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck13">
-																				<label class="custom-control-label" for="customCheck13">Laundry</label>
-																			</div>
-													                	</li>
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck14">
-																				<label class="custom-control-label" for="customCheck14">Sauna</label>
-																			</div>
-													                	</li>
-													                	<li>
-																			<div class="custom-control custom-checkbox">
-																				<input type="checkbox" class="custom-control-input" id="customCheck15">
-																				<label class="custom-control-label" for="customCheck15">Window Coverings</label>
-																			</div>
-													                	</li>
-													                </ul>
-														        </div>
-													      	</div>
-													      	<div class="row p15 pt0-xsd">
-													      		<div class="col-lg-11 col-xl-10">
-													      			<ul class="apeartment_area_list mb0">
-													      				<li class="list-inline-item">
-																			<div class="candidate_revew_select">
-																				<select class="selectpicker w100 show-tick">
-																					<option>Bathrooms</option>
-																					<option>1</option>
-																					<option>2</option>
-																					<option>3</option>
-																					<option>4</option>
-																					<option>5</option>
-																					<option>6</option>
-																					<option>7</option>
-																					<option>8</option>
-																				</select>
-																			</div>
-													      				</li>
-													      				<li class="list-inline-item">
-																			<div class="candidate_revew_select">
-																				<select class="selectpicker w100 show-tick">
-																					<option>Bedrooms</option>
-																					<option>1</option>
-																					<option>2</option>
-																					<option>3</option>
-																					<option>4</option>
-																					<option>5</option>
-																					<option>6</option>
-																					<option>7</option>
-																					<option>8</option>
-																				</select>
-																			</div>
-													      				</li>
-													      				<li class="list-inline-item">
-																			<div class="candidate_revew_select">
-																				<select class="selectpicker w100 show-tick">
-																					<option>Year built</option>
-																					<option>2013</option>
-																					<option>2014</option>
-																					<option>2015</option>
-																					<option>2016</option>
-																					<option>2017</option>
-																					<option>2018</option>
-																					<option>2019</option>
-																					<option>2020</option>
-																				</select>
-																			</div>
-													      				</li>
-													      				<li class="list-inline-item">
-																			<div class="candidate_revew_select">
-																				<select class="selectpicker w100 show-tick">
-																					<option>Built-up Area</option>
-																					<option>Adana</option>
-																					<option>Ankara</option>
-																					<option>Antalya</option>
-																					<option>Bursa</option>
-																					<option>Bodrum</option>
-																					<option>Gaziantep</option>
-																					<option>İstanbul</option>
-																					<option>İzmir</option>
-																					<option>Konya</option>
-																				</select>
-																			</div>
-													      				</li>
-													      			</ul>
-													      		</div>
-													      		<div class="col-lg-1 col-xl-2">
-													      			<div class="mega_dropdown_content_closer">
-														      			<h5 class="text-thm text-right mt15"><span id="hide_advbtn" class="curp">Hide</span></h5>
-													      			</div>
-													      		</div>
-													      	</div>
-													    </div>
-													</div>
-												</div>
-											</li>
+										
 											<li class="list-inline-item">
 												<div class="search_option_button">
-												    <button type="submit" class="btn btn-thm">Search</button>
+												    <button type="submit" class="btn btn-thm ">/Search</button>
 												</div>
 											</li>
 										</ul>
@@ -610,43 +415,42 @@ Home Page
 		</div>
 	</section>
 
-
 		<!-- Property Cities -->
 		<section id="property-city" class="property-city pb30">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<div class="main-title text-center">
-						<h2>{{json_decode($Cities_conent->content)->title}}</h2>
-						<p>{{json_decode($Cities_conent->content)->sub_title}}</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-			
-			@foreach($countries as $loc)
-				<div  class=" @if($loc->name == 'cairo'|| $loc->name=='Giza') col-8 @else col-4 @endif">
-					<div class="properti_city">
-						<div class="thumb  w-100 ">
-						<a href="{{route('countryProperty',$loc->id)}}">
-							<img class="img-fluid" src="{{asset('Front/images/property/'.$loc->img)}}" alt="pc1.jpg"></div>
-						</a>
-						<div class="overlay">
-							<div class="details">
-								<h4>{{$loc->name}}</h4>
-								<p>@if($loc->name=='cairo') {{$count_cairo}} Properties 
-									 @elseif($loc->name=='Alex') {{$count_alex}} Properties
-									  @elseif($loc->name=='Giza')  {{$count_giza}} Properties
-									  @else {{$count_bns}} Properties @endif</p>
-
-							</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 offset-lg-3">
+						<div class="main-title text-center">
+							<h2>{{json_decode($Cities_conent->content)->title}}</h2>
+							<p>{{json_decode($Cities_conent->content)->sub_title}}</p>
 						</div>
 					</div>
 				</div>
-			@endforeach
+				<div class="row">
+				
+				@foreach($countries as $loc)
+					<div  class=" @if($loc->name == 'cairo'|| $loc->name=='Giza') col-8 @else col-4 @endif">
+						<div class="properti_city">
+							<div class="thumb  w-100 ">
+							<a href="{{route('countryProperty',$loc->id)}}">
+								<img class="img-fluid" src="{{asset('Front/images/property/'.$loc->img)}}" alt="pc1.jpg"></div>
+							</a>
+							<div class="overlay">
+								<div class="details">
+									<h4>{{$loc->name}}</h4>
+									<p>@if($loc->name=='cairo') {{$count_cairo}} Properties 
+										@elseif($loc->name=='Alex') {{$count_alex}} Properties
+										@elseif($loc->name=='Giza')  {{$count_giza}} Properties
+										@else {{$count_bns}} Properties @endif</p>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				@endforeach
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
 	<!-- Why Chose Us -->
 	<section id="why-chose" class="whychose_us bgc-f7 pb30">
@@ -731,83 +535,6 @@ Home Page
 		</div>
 	</section>
 
-
-	<!-- Our Blog -->
-	<section class="our-blog bgc-f7 pb30">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<div class="main-title text-center">
-						<h2>{{json_decode($artical_conent->content)->title}}</h2>
-						<p>{{json_decode($artical_conent->content)->sub_title}}</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-4 col-xl-4">
-					<div class="for_blog feat_property">
-						<div class="thumb">
-							<img class="img-whp" src="{{asset('Front/images')}}/blog/bh1.jpg" alt="bh1.jpg">
-						</div>
-						<div class="details">
-							<div class="tc_content">
-								<p class="text-thm">Business</p>
-								<h4>Skills That You Can Learn In The Real Estate Market</h4>
-							</div>
-							<div class="fp_footer">
-								<ul class="fp_meta float-left mb0">
-									<li class="list-inline-item"><a href="#"><img src="{{asset('Front/images')}}/property/pposter1.png" alt="pposter1.png"></a></li>
-									<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-								</ul>
-								<a class="fp_pdate float-right" href="#">7 August 2019</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-4">
-					<div class="for_blog feat_property">
-						<div class="thumb">
-							<img class="img-whp" src="{{asset('Front/images')}}/blog/bh2.jpg" alt="bh2.jpg">
-						</div>
-						<div class="details">
-							<div class="tc_content">
-								<p class="text-thm">Business</p>
-								<h4>Bedroom Colors You’ll Never <br class="dn-1199"> Regret</h4>
-							</div>
-							<div class="fp_footer">
-								<ul class="fp_meta float-left mb0">
-									<li class="list-inline-item"><a href="#"><img src="{{asset('Front/images')}}/property/pposter1.png" alt="pposter1.png"></a></li>
-									<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-								</ul>
-								<a class="fp_pdate float-right" href="#">7 August 2019</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-4">
-					<div class="for_blog feat_property">
-						<div class="thumb">
-							<img class="img-whp" src="{{asset('Front/images')}}/blog/bh3.jpg" alt="bh3.jpg">
-						</div>
-						<div class="details">
-							<div class="tc_content">
-								<p class="text-thm">Business</p>
-								<h4>5 Essential Steps for Buying an Investment</h4>
-							</div>
-							<div class="fp_footer">
-								<ul class="fp_meta float-left mb0">
-									<li class="list-inline-item"><a href="#"><img src="{{asset('Front/images')}}/property/pposter1.png" alt="pposter1.png"></a></li>
-									<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-								</ul>
-								<a class="fp_pdate float-right" href="#">7 August 2019</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- Our Partners -->
 	<section id="our-partners" class="our-partners">
 		<div class="container">
@@ -850,7 +577,7 @@ Home Page
 	</section>
 
 	<!-- Start Partners -->
-<section class="start-partners bgc-thm pt50 pb50">
+	<section class="start-partners bgc-thm pt50 pb50">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">

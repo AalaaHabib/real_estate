@@ -50,13 +50,6 @@ Create new City
 							</div>
 						</div>
 					</div>
-					<div class="row mt50">
-						<div class="col-lg-12">
-							<div class="copyright-widget text-center">
-								<p>© 2020 Find House. Made with love.</p>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>

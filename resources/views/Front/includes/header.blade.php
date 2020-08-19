@@ -1,11 +1,12 @@
 
-<body>
+<body> 
 	@php 
 	$cats=\App\Ctegory::select('id','name')->get();
 	$cities=\App\Counrty::select('id','name')->get();
 	$sett=\App\Setting::first(); 
 	@endphp
 <div class="wrapper">
+
 
 
 	<div class="preloader"></div>
@@ -91,7 +92,7 @@
 			<div class="header stylehome1">
 				<div class="main_logo_home2 text-center">
 		            <img class="nav_logo_img img-fluid mt20" src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
-		            <span class="mt20">3KAR.cpm</span>
+		            <span class="mt20">3QAR.com</span>
 				</div>
 				<ul class="menu_bar_home2">
 	                <li class="list-inline-item list_s"><a href=""><span class="flaticon-user"></span></a></li>
@@ -140,3 +141,7 @@
 			</ul>
 		</nav>
 	</div>
+
+
+
+ 
