@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 use App\Admin;
 class AuthController extends Controller
 {
-    //
-    function loginview(){
+     function loginview(){
         return view('Admin/login');
     }
     function login(Request $request){
@@ -16,14 +15,9 @@ class AuthController extends Controller
             'email'=>'required|email',
             'password'=>'required|string',
         ]); 
-        //dd(sha1($request->password));
-        $admin=Admin::where(['email'=>$request->email , 'password'=> sha1($request->password) ])->first();
-        
+        $admin=Admin::where(['email'=>$request->email , 'password'=> sha1($request->password) ])->first(); 
         if(null!=$admin){ 
             \Auth::guard('admin')->loginUsingId($admin->id);
-            //dd($admin->id);
-            /*$x= \Auth::guard('admin')->loginUsingId($admin->id); 
-            dd($x);*/
             if(\Auth::guard('admin')->check()) 
                 return redirect(route('admin.index'));
             else 
@@ -32,7 +26,6 @@ class AuthController extends Controller
         else
         return back();  
     }
-
     function logout(){
         auth()->logout();
         return redirect(route('admin.loginview'));

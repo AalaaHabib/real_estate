@@ -50,7 +50,6 @@ class UserController extends Controller
             'email'=>'required|email',
             'password'=>'required|string',
         ]);
-        //dd($request->password);
         $user=new User();
         $user->UserName=$request->UserName;
         $user->email=$request->email;
@@ -58,10 +57,8 @@ class UserController extends Controller
         if($request->is_Agent!=null)
         $user->is_Agent=$request->is_Agent;
         $user->save();
-        //dd($user);
         return redirect(route('user.login'));
     }
-    //login user 
     public function login(){
         return view('Front.User.login');
     }
@@ -72,10 +69,7 @@ class UserController extends Controller
         ]); 
         $user=User::where(['email'=>$request->email , 'password'=> sha1($request->password) ])->first();
         if(null!=$user){
-           // dd($user->id);
-
             \Auth::loginUsingId($user->id);
-            
             return redirect(route('homepage'));
         }
         else

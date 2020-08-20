@@ -44,6 +44,14 @@ class HomePageController extends Controller
     }
     
 
-    
+    function searchHandle(Request $request)
+    {
+        $data['properties']=Property::where('status','buy')
+        ->where('category_id',$request->category_id)
+        ->where('country_id',$request->country_id)
+        ->whereBetween('price', array($request->minPrice,$request->maxPrice))
+        ->paginate();
+        return  view('Front.property.search-prop')->with($data);
+    }
 
 }

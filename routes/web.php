@@ -34,6 +34,7 @@ Route::namespace('Front')->group(function(){
 
 //index Home Page
 Route::get('/', 'HomePageController@index')->name('homepage');
+Route::post('/','HomePageController@searchHandle')->name('searchHandle');
 
 //All property in each country
 Route::prefix('/country')->group(function(){
