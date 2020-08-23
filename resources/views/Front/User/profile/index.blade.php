@@ -22,7 +22,7 @@ Profile
 		</div>
 		<ul class="Profile-class">
 			<li>Name: {{auth()->user()->UserName}} </li>
-			<li>Email: {{auth()->user()->UserName}} </li>
+			<li>Email: {{auth()->user()->email}} </li>
 			<li>is Agent: {{auth()->user()->is_Agent}} </li>
 			<li>postion : {{auth()->user()->postion}} </li>
 			<li>phone : {{auth()->user()->phone}} </li>  
