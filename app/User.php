@@ -13,7 +13,7 @@ class User extends Authenticatable
     protected $guarded=['id'];
     
     protected $fillable = [
-        'UserName', 'email', 'password','is_Agent','img'
+        'UserName', 'email', 'password','is_Agent','img','postion','phone'
     ];
 
     protected $hidden = [
