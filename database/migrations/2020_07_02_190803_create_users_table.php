@@ -19,6 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('password'); 
             $table->boolean('is_Agent')->default(0);
+            $table->string('img')->nullable(); 
+            $table->string('postion')->nullable(); 
+            $table->string('office')->nullable(); 
+            $table->string('phone')->nullable(); 
+            $table->string('taxNumber')->nullable(); 
+            $table->string('faxNumber')->nullable();   
             $table->timestamps();
         });
     }
