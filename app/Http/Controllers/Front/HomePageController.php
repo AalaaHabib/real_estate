@@ -13,9 +13,8 @@ class HomePageController extends Controller
     //
     public function index(){
         $data['properties']=Property::get();
-        $data['countries']=Counrty::select('id','name','img')->orderBy('id')->take(4)->get();
+        $data['countries']=Counrty::select('id','name','img')->orderBy('id')->take(4)->get();    
         $data['testimonials']=Testimonial::get();
- 
         //->country id = > 4  withCount(['properties'])
 
         //\Counrty::whereIn('id',[1,2,3,4])->withCount('properties');

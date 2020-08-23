@@ -99,6 +99,9 @@ Route::middleware('admin')->group(function(){
      Route::prefix('/users')->group(function(){
         //show all users for admin
         Route::get('/','UserController@index')->name('admin.users.index');
+        Route::post('/search','UserController@search')->name('admin.users.search');
+        Route::get('/asort','UserController@sortAsc')->name('admin.users.Asc');
+        Route::get('/zsort','UserController@sortDesc')->name('admin.users.desc');
         Route::get('/agents','UserController@showAgnets')->name('admin.users.agents'); 
         Route::get('/companies','UserController@showCompanies')->name('admin.users.companies'); 
         Route::get('/destroy/{id}','UserController@destroy')->name('admin.users.destroy'); 

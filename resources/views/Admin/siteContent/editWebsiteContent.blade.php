@@ -67,43 +67,67 @@
 									</div>
 								</div>
 							</div>
-							
-							<div class="my_dashboard_review mt30">
+							<div class="my_dashboard_review">
 								<div class="row">
 									<div class="col-xl-2">
-										<h4>Change password</h4>
+										<h4>Featured Section</h4>
 									</div>
 									<div class="col-xl-10">
-										<div class="row">
-											<div class="col-xl-6">
-												<div class="my_profile_setting_input form-group">
-											    	<label for="formGroupExampleOldPass">Old Password</label>
-											    	<input type="text" class="form-control" id="formGroupExampleOldPass" placeholder="alitfn">
+										<form method="post" action="{{route('siteContent.update')}}">
+											@csrf
+											<div class="row">	
+												<input type="hidden" name="type" value="Featured">								
+												<div class="col-lg-6 col-xl-6">
+													<div class="my_profile_setting_input form-group">
+														<label for="formGroupExampleInput1">Title</label>
+														<input type="text" name="banner_titile" value="{{json_decode($Featured->content)->title}}" class="form-control" id="formGroupExampleInput1" placeholder="alitfn">
+													</div>
+												</div>
+												<div class="col-lg-6 col-xl-6">
+													<div class="my_profile_setting_input form-group">
+														<label for="formGroupExampleEmail">Sub Titile</label>
+														<input type="text"name="banner_subtitile" value="{{json_decode($Featured->content)->sub_title}}" class="form-control" id="formGroupExampleEmail" placeholder="creativelayers@gmail.com">
+													</div>
+												</div>
+												<div class="col-xl-12 text-right">
+													<div class="my_profile_setting_input">											
+														<button class="btn btn2" type="submit">Update Featured</button>
+													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
-											<div class="col-lg-6 col-xl-6">
-												<div class="my_profile_setting_input form-group">
-											    	<label for="formGroupExampleNewPass">New Password</label>
-											    	<input type="text" class="form-control" id="formGroupExampleNewPass">
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="my_dashboard_review">
+								<div class="row">
+									<div class="col-xl-2">
+										<h4>Cities Section</h4>
+									</div>
+									<div class="col-xl-10">
+										<form method="post" action="{{route('siteContent.update')}}">
+											@csrf
+											<div class="row">	
+												<input type="hidden" name="type" value="Cities">								
+												<div class="col-lg-6 col-xl-6">
+													<div class="my_profile_setting_input form-group">
+														<label for="formGroupExampleInput1">Title</label>
+														<input type="text" name="banner_titile" value="{{json_decode($Cities->content)->title}}" class="form-control" id="formGroupExampleInput1" placeholder="alitfn">
+													</div>
+												</div>
+												<div class="col-lg-6 col-xl-6">
+													<div class="my_profile_setting_input form-group">
+														<label for="formGroupExampleEmail">Sub Titile</label>
+														<input type="text"name="banner_subtitile" value="{{json_decode($Cities->content)->sub_title}}" class="form-control" id="formGroupExampleEmail" placeholder="creativelayers@gmail.com">
+													</div>
+												</div>
+												<div class="col-xl-12 text-right">
+													<div class="my_profile_setting_input">											
+														<button class="btn btn2" type="submit">Update Cities</button>
+													</div>
 												</div>
 											</div>
-											<div class="col-lg-6 col-xl-6">
-												<div class="my_profile_setting_input form-group">
-											    	<label for="formGroupExampleConfPass">Confirm New Password</label>
-											    	<input type="text" class="form-control" id="formGroupExampleConfPass">
-												</div>
-											</div>
-											<div class="col-xl-12">
-												<div class="my_profile_setting_input float-left fn-520">
-													<button class="btn btn3 btn-dark">Update Profile</button>
-												</div>
-												<div class="my_profile_setting_input float-right fn-520">
-													<button class="btn btn2">Update Profile</button>
-												</div>
-											</div>
-										</div>
+										</form>
 									</div>
 								</div>
 							</div>

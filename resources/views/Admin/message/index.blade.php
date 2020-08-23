@@ -29,13 +29,13 @@
 												<div class="wrap">
 													<div class="row">
 														<div class="col-3">
-														<a class="btn btn-danger px-3 py-1 mb-3" href="{{route('admin.showMess',$mess->id)}}">{{$loop->iteration}}</a>
-														<a class="btn btn-success px-3 py-1 mb-3" href="{{route('admin.deleteMess',$mess->id)}}">solved</a>											
+														<a class="btn btn-outline-danger px-3 py-1 mb-3 " href="{{route('admin.showMess',$mess->id)}}">show</a>
+														<a class="btn btn-outline-success px-3 py-1 mb-3" href="{{route('admin.deleteMess',$mess->id)}}">solve</a>											
 													</div>
-													<div class="col-5">
+													<div class="col-5  mt-4 mt-sm-0">
 														<h5 class="name">{{$mess->name}}</h5>
 													</div>
-													<div class="col-4">							
+													<div class="col-4 mt-4 mt-sm-0">							
 														<p class="preview">{{$mess->title}}</p>
 													</div>
 													</div>

@@ -29,7 +29,7 @@
 		        <a href="#" class="navbar_brand float-left dn-smd">
 		            <img class="logo1 img-fluid" src="{{asset('Front/images')}}/header-logo.png" alt="header-logo.png">
 		            <img class="logo2 img-fluid" src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
-		            <span>3QAK.com</span>
+		            <span>{{$sett->logo}}</span>
 		        </a>
 		        <!-- Responsive Menu Structure-->
 		        <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
