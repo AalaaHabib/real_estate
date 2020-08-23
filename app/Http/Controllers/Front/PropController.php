@@ -24,8 +24,7 @@ class PropController extends Controller
             $filename=$this->upload_file( $request, 'main_imgx',  'properties' );
         }else{
             return back()->withError(['invalid image'=>'please put an image']);
-        }  
-        
+        }   
         $request->merge([
             'city'=>'TEST',
             'user_id'=>\Auth::user()->id,
@@ -45,13 +44,16 @@ class PropController extends Controller
               "user_id"=>"required"
  
         ]);  
-        $property=Property::create($request->except(['_token','main_imgx']));
-        $image = \App\Picture::create(
-            [
-                'img'=>$filename,
-                'prop_id'=>$property->id
-            ]
-        );
+        $property=Property::create($request->except(['_token','main_imgx','image'])); 
+        $file_names = $this->upload_file( $request, 'image',  'properties' ); 
+        foreach($file_names as $file_name){ 
+            $image = \App\Picture::create(
+                [
+                    'img'=>$file_name,
+                    'prop_id'=>$property->id
+                ]
+            );
+        }
         return redirect()->route('property.index')->with('data',['alert'=>'seccess']);
     }
     public function edit(Request $request,Property $prop){

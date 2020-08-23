@@ -16,13 +16,25 @@ class Controller extends BaseController
     	Request $request,
         $input_field, 
         $path_to_save
-    ){    
-        if ($request->hasFile("$input_field")) {
-            $file       = $request->file("$input_field");
-            $path       = $path_to_save; // '/uploads/portfolios/'; 
-            $filename =  uniqid() . '_' . time() . '.' . $file->getClientOriginalExtension();
-            return basename($request->file("$input_field")->store('public/uploads/'.$path)); 
+    ){   
+        $file_names=array(); 
+        if ($request->hasFile("$input_field")) { 
+            $path       = $path_to_save;
+            if(is_array($request->file("$input_field"))){
+                $files=$request->file("$input_field");  
+                foreach ($files as $my_file) { 
+                    array_push($file_names, basename($my_file->store('public/uploads/'.$path)) );
+                }  
+                    return $file_names; 
+            }
+            else{
+                $file       = $request->file("$input_field");
+                return basename($file->store('public/uploads/'.$path));
+            }
+            
         } 
+
+        
     }
 
 
