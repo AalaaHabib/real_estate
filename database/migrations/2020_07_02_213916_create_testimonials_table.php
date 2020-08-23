@@ -18,8 +18,8 @@ class CreateTestimonialsTable extends Migration
             $table->text('desc');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('userDesc_id');
-            $table->foreign('userDesc_id')->references('id')->on('user__descs');
+            //$table->unsignedBigInteger('userDesc_id');
+            //$table->foreign('userDesc_id')->references('id')->on('user__descs');
             $table->timestamps();
         });
     }

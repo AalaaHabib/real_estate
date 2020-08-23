@@ -23,8 +23,8 @@ class CreatePropertiesTable extends Migration
             $table->foreign('category_id')->references('id')->on('ctegories');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('Agency_id');
-            $table->foreign('Agency_id')->references('id')->on('agencies')->nullable();
+            /*$table->unsignedBigInteger('Agency_id');
+            $table->foreign('Agency_id')->references('id')->on('agencies')->nullable();*/
             $table->enum('status',['rent','buy']);
             $table->double('price');
             $table->integer('size');

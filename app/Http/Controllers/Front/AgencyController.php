@@ -12,7 +12,7 @@ class AgencyController extends Controller
     //
     public function showAgencies(){
         $data['agencies']=Agency::paginate(4);
-        $data['count']=Property::where('agency_id','1')->count();
+        //$data['count']=Property::where('agency_id','1')->count();
            
         $data['agencies']=Agency::paginate(4);
         $data['categories']=Ctegory::get();

@@ -5,26 +5,24 @@ use App\Counrty;
 use App\Ctegory;
 use App\Admin;
 use App\SiteContent;
-use App\Property;
-use App\SiteContent; 
+use App\Property; 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
+ 
     public function run()
     {
-
-        // $this->call(UserSeeder::class);
-        // $this->call(CategorySeeder::class); 
-        // $this->call(CounrtySeeder::class); 
-        // $this->call(ProprtySeeder::class);
-        // $this->call(SiteContentSeeder::class);
-        
+        $this->call(UserSeeder::class);
+        $this->call(CategorySeeder::class); 
+        $this->call(CounrtySeeder::class); 
+        $this->call(ProprtySeeder::class);
+        $this->call(SiteContentSeeder::class);
+        $this->call(TestimonialSeeder::class);
+        $this->call(SettingSeeder::class);
+        $this->call(AgencySeeder::class);
+        $this->call(MessageSeeder::class);
     }
 }
+
 
 class UserSeeder extends Seeder
 { 
@@ -33,18 +31,50 @@ class UserSeeder extends Seeder
         \App\Admin::create([
             'userName'=>'peter',
             'email'=>'peter@gmail.com',
-            'password'=>sha1('peter')
+            'password'=>sha1('peter')  
         ]);
         \App\User::create([
             'UserName'=>'alaa',
             'email'=>'alaa@gmail.com',
-            'password'=>sha1('alaa')
+            'password'=>sha1('alaa'),
+            'img'=>'2.png',
+            'postion'=>'Doctor',
+            'phone'=>'01234567890',
+            'taxNumber'=>rand(1000,3000),
+            'faxNumber'=>rand(1000,3000)
         ]);
         \App\User::create([
             'UserName'=>'ahmed',
             'email'=>'ahmed@gmail.com',
             'password'=>sha1('ahmed'),
-            'is_Agent'=>1
+            'is_Agent'=>1,
+            'img'=>'3.png',
+            'postion'=>'Teacher',
+            'phone'=>'01234567890',
+            'taxNumber'=>rand(1000,3000),
+            'faxNumber'=>rand(1000,3000)
+        ]);
+        \App\User::create([
+            'UserName'=>'esraa',
+            'email'=>'esraa@gmail.com',
+            'password'=>sha1('esraa'),
+            'is_Agent'=>1,
+            'img'=>'4.png',
+            'postion'=>'Student',
+            'phone'=>'01234567890',
+            'taxNumber'=>rand(1000,3000),
+            'faxNumber'=>rand(1000,3000)
+
+        ]);
+        \App\User::create([
+            'UserName'=>'asmaa',
+            'email'=>'asmaa@gmail.com',
+            'password'=>sha1('asmaa'), 
+            'img'=>'5.png',
+            'postion'=>'CEO',
+            'phone'=>'01234567890',
+            'taxNumber'=>rand(1000,3000),
+            'faxNumber'=>rand(1000,3000) 
         ]);
     }
 }
@@ -97,12 +127,36 @@ class CounrtySeeder extends Seeder
         $i=1;
        foreach ($countries as $country)
        {
-        Counrty::create([
+         Counrty::create([
                'name'=>$country,
-               'img'=>'pc'.$i.'jpg',
+               'img'=>'pc'.$i.'.jpg',
            ]);
+         $i++;
        } 
     
+    }
+}
+class AgencySeeder extends Seeder
+{  
+    public function run()
+    {
+        $agencies=[
+            'Country House Real Estate',
+            'High-Rise Real Estate',
+            'Modern House Real estate',
+            'Real estate experts',
+            'Luxury House Real Estate',
+            'James Estate Agents',
+        ];
+        for($i=1;$i<7;$i++)
+        \App\Agency::create([
+            'name'=>$agencies[$i-1],
+            'taxNumber'=>rand(600000,700000),
+            'faxNumber'=>rand(600000,700000),
+            'img'=>$i.'.jpg',
+            'email'=>\Str::slug($agencies[$i-1]).'@agency.com',
+            'phone'=>'01234567890'
+        ]); 
     }
 }
 class ProprtySeeder extends Seeder
@@ -112,6 +166,7 @@ class ProprtySeeder extends Seeder
         for($i=0;$i<=20;$i++){
             $property=Property::create([
                 'country_id'=>rand(1,12),
+               /* 'Agency_id'=>rand(1,6),*/
                 'category_id'=>rand(1,9),
                 'user_id'=>rand(1,3),
                 'status'=>'rent',
@@ -128,17 +183,16 @@ class ProprtySeeder extends Seeder
                   the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
                   and more recently with desktop publishing software like Aldus PageMaker including
                    versions of Lorem Ipsum" ,
-                'main_img'=>rand(1,27).'.jpg',
+                'main_img'=>'fp'.rand(1,27).'.jpg',
                 'city'=>'cairo'  ,
                 'address'=>'street number 18' ,
                 
-            ]);
-            for($=0;$i<4;$i++)
+            ]); 
+            for($x=0;$x<4;$x++)
                 \App\Picture::create([
                     'prop_id'=>$property->id,
-                    'img'=>rand(1,27).'.jpg'
+                    'img'=>'fb'.rand(1,27).'.jpg'
                 ]);
-
             }
         }
 }
@@ -244,5 +298,63 @@ class SiteContentSeeder extends Seeder
             'sub_title'=>'We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.',  
             ])
         ]);
+    }
+}
+class TestimonialSeeder extends Seeder
+{ 
+    public function run()
+    {
+         for($i=0;$i<6;$i++)
+            \App\Testimonial::create(
+                [
+                    'desc'=>"Very Amazing Website Help Me to Buy my current Flat and I won't leave it",
+                    "user_id"=>1
+                ]
+            );
+    }
+}
+class SettingSeeder extends Seeder
+{ 
+    public function run()
+    { 
+        \App\Setting::create(
+            [
+            'logo'=>'3QAR.com',
+            'favIcon'=>'favicon.ico',
+            'city'=>'Beni-Suef',
+            'address'=>'Beni-Suef Alfashn - 3 werash street',
+            'phone'=>'01234567890',
+            'works_hour'=>'From 2.00 AM To 9.00 PM',
+            'email'=>'Support@3QAR.com',
+            'map'=>'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13950.039014132626!2d31.101947424157718!3d29.061078151802874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1593904908377!5m2!1sar!2seg" width="1000" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>',
+            'fb'=>'#',
+            'tiwitter'=>'#',
+            'insta'=>'#',
+            'Skype'=>'#',
+            'prinst'=>'#',
+            ]
+        );
+    }
+}
+class MessageSeeder extends Seeder
+{  
+    public function run()
+    {
+        $messages=[
+            'Country House Real Estate',
+            'High-Rise Real Estate',
+            'Modern House Real estate',
+            'Real estate experts',
+            'Luxury House Real Estate',
+            'James Estate Agents',
+        ];
+        for($i=1;$i<6;$i++)
+        \App\Messages::create([ 
+            'name'=>"Ali Maher",
+            'title'=>"Problem When Uploading Files",
+            'message'=>"How Are You >> Problem When Uploading Files", 
+            'email'=>\Str::slug($messages[$i-1]).'@agency.com',
+            'phone'=>'01234567890'
+        ]); 
     }
 }

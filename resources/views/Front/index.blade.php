@@ -374,7 +374,7 @@ Home Page
 							<div class="feat_property">
 								<div class="thumb">
 		
-									<img class="img-whp"  src="{{asset('uploads/properties/'.$prop->main_img)}}" alt="fp1.jpg">
+									<img class="img-whp"  src="{{asset('/storage/uploads/properties/'.$prop->main_img)}}" alt="fp1.jpg">
 						
 									<div class="thmb_cntnt">
 			
@@ -525,7 +525,7 @@ Home Page
 						<div class="item">
 							<div class="testimonial_grid">
 								<div class="thumb">
-									<img src="{{asset('uploads/testimonial/'.$test->user['img'])}}" alt="1.jpg">
+									<img src="{{asset('/storage/uploads/users/'.$test->user['img'])}}" alt="1.jpg">
 								</div>
 								<div class="details">
 									<h4>{{$test->User['UserName']}}</h4>

@@ -38,7 +38,7 @@ Properties
 						<div class="item">
 							<div class="feat_property">
 								<div class="thumb">
-									<img class="img-whp" src="{{asset('uploads/properties/'.$prop->main_img)}}" alt="fp1.jpg">
+									<img class="img-whp" src="{{asset('/storage/uploads/properties/'.$prop->main_img)}}" alt="fp1.jpg">
 									<div class="thmb_cntnt">
 			
 										<ul class="tag mb0">
