@@ -5,7 +5,13 @@ use Illuminate\Support\Facades\Route;
 /*-----------------------Peter's Routes----------------------------*/
 Route::get('properties/','Front\PropController@allProperties')->name('allProperties');
 Route::middleware('auth')->group(function(){
+
   Route::get('profile','Front\UserController@profile')->name('my.profile');  
+  Route::get('profile/edit','Front\UserController@profile_edit')->name('my.profile-edit');  
+  Route::post('/profile/update','Front\UserController@profile_update')->name('my.profile-update'); 
+  Route::get('/profile/contact','Front\UserController@profile_contact')->name('my.profile-contact'); 
+  Route::get('/profile/edit-password','Front\UserController@profile_edit_password')->name('my.profile-edit-password');  
+  Route::post('/profile/update-password','Front\UserController@profile_update_password')->name('my.profile-update-password');
   Route::resource('property','Front\PropController');
   Route::get('property/create','Front\PropController@create')->name("createProp");
 });

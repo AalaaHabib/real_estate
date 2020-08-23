@@ -41,10 +41,10 @@ $sett=\App\Setting::first();
 					<div class="footer_social_widget">
 						<h4>Follow us</h4>
 						<ul class="mb30">
-							<li class="list-inline-item"><a href="{{$sett->fb}}"><i class="fa fa-facebook"></i></a></li>
-							<li class="list-inline-item"><a href="{{$sett->tiwitter}}"><i class="fa fa-twitter"></i></a></li>
-							<li class="list-inline-item"><a href="{{$sett->insta}}"><i class="fa fa-instagram"></i></a></li>
-							<li class="list-inline-item"><a href="{{$sett->prinst}}"><i class="fa fa-pinterest"></i></a></li>
+							<li class="list-inline-item"><a href="{{$sett->fb}}"><i class="fab fa-facebook"></i></a></li>
+							<li class="list-inline-item"><a href="{{$sett->tiwitter}}"><i class="fab fa-twitter"></i></a></li>
+							<li class="list-inline-item"><a href="{{$sett->insta}}"><i class="fab fa-instagram"></i></a></li>
+							<li class="list-inline-item"><a href="{{$sett->prinst}}"><i class="fab fa-pinterest"></i></a></li>
 							
 						</ul>
 						<h4>Subscribe</h4>

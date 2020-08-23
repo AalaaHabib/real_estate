@@ -5,7 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
-{
+{   
+
+    public function getRouteKeyName()
+    {
+        return 'id';
+    }
+
     protected $guarded=['id'];
     //relation one property belongs  to one category
     public function category(){

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Property;
 use App\Picture;
 use App\Ctegory;
+//href="{{$pic->getImagePath()}}"
 class PropertiesController extends Controller
 {
     function index(){

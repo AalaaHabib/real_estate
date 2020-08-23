@@ -12,7 +12,7 @@ Properties
 					<div class="row m0">
 						<div class="col-lg-12 p0">
 							<div class="spls_style_one pr1 1px">
-								<img class="img-fluid w100" src="{{asset('uploads/properties/'.$firstPic->img)}}" alt="ls1.jpg">
+								<img class="img-fluid w100" src="{{$firstPic->getImagePath()}}" alt="ls1.jpg">
 							</div>
 						</div>
 					</div>
@@ -22,7 +22,7 @@ Properties
 					@foreach($fourPic as $pic)
 						<div class="col-sm-6 col-lg-6 p0">
 							<div class="spls_style_one">
-								<a class="popup-img" href="images/property/ls2.jpg"><img src="{{asset('uploads/properties/'.$pic->img)}}" alt="ls2.jpg"></a>
+								<a class="popup-img" href="{{$pic->getImagePath()}}"><img src="{{$pic->getImagePath()}}" alt="ls2.jpg"></a>
 							</div>
 						</div>
 					@endforeach
@@ -36,7 +36,7 @@ Properties
 			<div class="row listing_single_row">
 				<div class="col-sm-6 col-lg-7 col-xl-8">
 					<div class="single_property_title">
-						<a href="images/property/ls1.jpg" class="upload_btn popup-img"><span class="flaticon-photo-camera"></span> View Photos</a>
+						<a href="{{$firstPic->getImagePath()}}" class="upload_btn popup-img"><span class="flaticon-photo-camera"></span> View Photos</a>
 					</div>
 				</div>
 				<div class="col-sm-6 col-lg-5 col-xl-4">

@@ -12,27 +12,20 @@ use Image;
 
 class PropController extends Controller
 {
-
+ 
     public function index(Request $request){
-        return view('Front.User.index-property');
+        return view('Front.User.property.index-property');
     }
     public function create(Request $request){
-        return view('Front.User.create-property');
+        return view('Front.User.property.create-property');
     }
-    public function store(Request $request){
-
-    
-
-        if($request->hasFile('main_img')){
-            $image = $request->file('main_img');
-            $largeimage = Image::make($image)->encode('jpg');
-            $filename=uniqid().'.jpg';
-            \Storage::disk('uploads')->put('properties/'.$filename, $largeimage);
+    public function store(Request $request){ 
+        if($request->hasFile('main_imgx')){
+            $filename=$this->upload_file( $request, 'main_imgx',  'properties' );
         }else{
             return back()->withError(['invalid image'=>'please put an image']);
-        }
- 
-
+        }  
+        
         $request->merge([
             'city'=>'TEST',
             'user_id'=>\Auth::user()->id,
@@ -51,27 +44,28 @@ class PropController extends Controller
               "country_id" => 'required|exists:ctegories,id',
               "user_id"=>"required"
  
-        ]); 
-        Property::create($request->except(['_token','main_imgx']));
+        ]);  
+        $property=Property::create($request->except(['_token','main_imgx']));
+        $image = \App\Picture::create(
+            [
+                'img'=>$filename,
+                'prop_id'=>$property->id
+            ]
+        );
         return redirect()->route('property.index')->with('data',['alert'=>'seccess']);
     }
     public function edit(Request $request,Property $prop){
         return view('Front.User.edit-property',compact('prop'));
     } 
-    public function show(Request $request,Property $prop){
-        dd($prop->id);
-        $id=$prop->category->id;
-        $data['property']=Property::findOrFail($p_id);
-        $data['firstPic']=Picture::where('prop_id',$id)->first();
-        $data['fourPic']=Picture::where('prop_id',$id)->orderBy('id','desc')->take(4)->get();
+    public function show(Request $request,Property $property){ 
+        $id=$property->category->id;
+        $prop_id=$property->id;
+        $data['property']=Property::findOrFail($id);
+        $data['firstPic']=Picture::where('prop_id',$prop_id)->first();
+        $data['fourPic']=Picture::where('prop_id',$prop_id)->orderBy('id','desc')->take(4)->get();
         $data['categories']=Ctegory::get();
         $data['featured_prop']=Property::where('is_feature','1')->orderBy('id','desc')->take(5)->get();
-        return view('Front.category.catpropSingle')->with($data);
-
-
-
-    
-        //return view('Front.User.show-property',compact('prop'));
+        return view('Front.category.catpropSingle')->with($data); 
     }
     public function update(Request $request,Property $prop){
         $prop->update($request->except('_token'));

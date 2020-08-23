@@ -6,7 +6,11 @@
 	$sett=\App\Setting::first(); 
 	@endphp
 <div class="wrapper">
-
+	<style >
+		.row{
+			margin: 0px!important;
+		}
+	</style>
 
 
 	<div class="preloader"></div>
@@ -70,16 +74,28 @@
 		            <li >
 		                <a href="{{route('showAgents')}}"><span class="title">Agents</span></a>
 		            </li>
+
 					<li class="last">
 		                <a href="{{route('contact')}}"><span class="title">Contact</span></a>
 					</li> 
-			@if(\Auth::check())
+						@if(\Auth::check())
 						<li class="list-inline-item add_listing"><a href="{{route('createProp')}}"><span class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
-						<li><a href="{{route('user.Logout')}}"> <span class="dn-lg">Logout</span></a></li>
-			@else
+
+						<li><a href="/profile"><span class="flaticon-user"></span> Profile</a></li>
+			 
+						<li><a href="{{route('user.Logout')}}" id="logout"> <span class="dn-lg">Logout</span></a></li>
+						@else
 						<li><a href="{{route('user.register')}}"class="btn flaticon-user" > <span class="dn-lg">Register</span></a></li>
+
+						 
+
 						<li><a href="{{route('user.login')}}"  > <span class="dn-lg">Login</span></a></li>
-	        @endif  
+	        			@endif  
+
+
+	        
+
+
 		        </ul>
 		    </nav>
 		</div>
@@ -105,6 +121,8 @@
 				<li>
 					<a href="{{route('homepage')}}"><span class="title">Home</span></a> 
 				</li>
+				
+
 				<li>
 		                <a href="#"><span class="title">Property</span></a>
 		                <!-- Level Two-->
@@ -135,9 +153,13 @@
 				<li><a href="{{route('showAgencies')}}"><span class="title">Agencies</span></a></li>
 		        <li> <a href="{{route('showAgents')}}"><span class="title">Agents</span></a> </li>
 				<li class="">  <a href="{{route('contact')}}"><span class="title">Contact</span></a></li>
+				
+
 				<li><a href="{{route('user.login')}}"><span class="flaticon-user"></span> Login</a></li>
 				<li><a href="{{route('user.register')}}"><span class="flaticon-edit"></span> Register</a></li>
-				<li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="{{route('createProp')}}"><span class="flaticon-plus"></span> Create Listing</a></li>
+				<li class="cl_btn">
+					<a class="btn btn-block btn-lg btn-thm circle" href="{{route('createProp')}}"><span class="flaticon-plus"></span> Create Listing</a>
+				</li>
 			</ul>
 		</nav>
 	</div>

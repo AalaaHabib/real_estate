@@ -13,7 +13,7 @@ class User extends Authenticatable
     protected $guarded=['id'];
     
     protected $fillable = [
-        'UserName', 'email', 'password','is_Agent'
+        'UserName', 'email', 'password','is_Agent','img'
     ];
 
     protected $hidden = [
@@ -26,6 +26,12 @@ class User extends Authenticatable
     // one Testimonial belongs to one user 
     public function test(){
         return $this->belongsTo('App\Testimonial');
+    }
+    public function getUserAvatar(){
+
+        if($this->img!=null)
+            return '/storage/uploads/users/'.$this->img;
+        return '/site_images/user.png';
     }
 }
 

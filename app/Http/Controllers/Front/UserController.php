@@ -100,7 +100,55 @@ class UserController extends Controller
 
 
     public function profile(Request $request){
-        return view('Front.User.profile');
+        return view('Front.User.profile.index');
     }
+    public function profile_edit(Request $request){
+        return view('Front.User.profile.edit');
+    }
+    public function profile_edit_password(Request $request){
+        return view('Front.User.profile.security');
+    }
+    public function profile_update_password(Request $request){
+        $request->validate(
+            [
+                'old_password'=>'required|',
+                'password'=>'required|min:1|max:20|confirmed'
+            ]
+        );
+        //dd($request->password);
+        $user=\App\User::where(['email'=>auth()->user()->email,'password'=>sha1($request->password)])->first();
+
+        if($user==null)
+            return back();
+        else{
+            auth()->user()->update(['password'=>sha1($request->password)]); 
+        }
+        
+        return redirect()->route('my.profile')->with('data',['alert'=>'Success','alert-type'=>'success']);
+
+    }
+    public function profile_update(Request $request){
+        
+        $request->validate(
+            [
+                'UserName'=>'required|string|min:3|max:40',
+                'email'=>'required|email',
+                'is_Agent'=>'required|in:0,1',
+                'postion'=>'nullable|string|min:3|max:40',
+                'phone'=>'nullable|digits:11|regex:/^[0-9]+$/',
+                'avatar'=>'nullable|mimes:jpeg,jpg,png,gif|max:10000'
+            ]
+        ); 
+        auth()->user()->update($request->except(['_token','avatar']));
+        if($request->hasFile('avatar'))
+            auth()->user()->update(['img'=> $this->upload_file($request,'avatar','users') ]); 
+        return view('Front.User.profile.index');
+    }
+    public function profile_contact(Request $request)
+    {
+        return view('Front.User.profile.contact');
+    }
+    
+    
    
 }
