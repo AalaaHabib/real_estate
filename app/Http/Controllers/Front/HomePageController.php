@@ -13,9 +13,8 @@ class HomePageController extends Controller
     //
     public function index(){
         $data['properties']=Property::get();
-        $data['countries']=Counrty::select('id','name','img')->orderBy('id')->take(4)->get();
+        $data['countries']=Counrty::select('id','name','img')->orderBy('id')->take(4)->get();    
         $data['testimonials']=Testimonial::get();
- 
         //->country id = > 4  withCount(['properties'])
 
         //\Counrty::whereIn('id',[1,2,3,4])->withCount('properties');
@@ -44,6 +43,14 @@ class HomePageController extends Controller
     }
     
 
-    
+    function searchHandle(Request $request)
+    {
+        $data['properties']=Property::where('status','buy')
+        ->where('category_id',$request->category_id)
+        ->where('country_id',$request->country_id)
+        ->whereBetween('price', array($request->minPrice,$request->maxPrice))
+        ->paginate();
+        return  view('Front.property.search-prop')->with($data);
+    }
 
 }

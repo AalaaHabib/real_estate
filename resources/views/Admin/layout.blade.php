@@ -63,27 +63,51 @@
 		</div>
 	</header>
 
-	<!-- Main Header Nav For Mobile -->
-	<div id="page" class="stylehome1 h0">
+
+<!-- Main Header Nav For Mobile -->
+<div id="page" class="stylehome1 h0">
 		<div class="mobile-menu">
 			<div class="header stylehome1">
 				<div class="main_logo_home2 text-center">
-		            <img class="nav_logo_img img-fluid mt20"src="{{asset('Front/images')}}/header-logo2.png" >
-		            <span class="mt20">{{$sett->logo}}</span>
+		            <img class="nav_logo_img img-fluid mt20" src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
+		            <span class="mt20">3QAR.com</span>
 				</div>
 				<ul class="menu_bar_home2">
-	                <li class="list-inline-item list_s"><a href="page-register.html"><span class="flaticon-user"></span></a></li>
+	                <li class="list-inline-item list_s"><a href="{{route('admin.logout')}}"><span >logout</span></a></li>
 					<li class="list-inline-item"><a href="#menu"><span></span></a></li>
 				</ul>
 			</div>
 		</div><!-- /.mobile-menu -->
 		<nav id="menu" class="stylehome1">
 			<ul>
-	
-				<li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="#"><span class="flaticon-plus"></span> Logout</a></li>
-			</ul>
+				<li>
+					<a href="{{route('admin.index')}}"><span class="title">Dashboard</span></a> 
+				</li>
+				<li><a href="{{route('adminMessage.index')}}"><span class="title">Message</span></a></li>
+		        <li> <a href="{{route('adminProp.index')}}"><span class="title">Properties</span></a> </li>
+				<li class="">  <a href="{{route('adminCats.index')}}"><span class="title">Categories</span></a></li>
+				<li>
+		                <a href="#"><span class="title">Users</span></a>
+		                <!-- Level Two-->
+	                	<ul>
+		                    <li>
+		                        <a href="{{route('admin.users.index')}}">All Users</a>
+		                    </li>
+							<li>
+		                        <a href="{{route('admin.users.agents')}}">Agents</a>
+		                    </li>
+							<li>
+		                        <a href="{{route('admin.users.companies')}}">Agencies</a>
+		                    </li>
+	                	</ul>
+		        </li>
+				<li><a href="{{route('siteContent.index')}}"><span class="title">Site Content</span></a></li>
+		        <li> <a href="{{route('setting.index')}}"><span class="title">Setting</span></a> </li>
+				
+				<li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="{{route('admin.logout')}}"> Logout</a></li>			</ul>
 		</nav>
 	</div>
+	
 
     <div class="dashboard_sidebar_menu dn-992 " >
 	    <ul class="sidebar-menu">

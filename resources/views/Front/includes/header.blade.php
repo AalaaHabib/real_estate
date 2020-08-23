@@ -33,7 +33,7 @@
 		        <a href="#" class="navbar_brand float-left dn-smd">
 		            <img class="logo1 img-fluid" src="{{asset('Front/images')}}/header-logo.png" alt="header-logo.png">
 		            <img class="logo2 img-fluid" src="{{asset('Front/images')}}/header-logo2.png" alt="header-logo2.png">
-		            <span>3QAK.com</span>
+		            <span>{{$sett->logo}}</span>
 		        </a>
 		        <!-- Responsive Menu Structure-->
 		        <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
@@ -152,14 +152,13 @@
 		            </li>
 				<li><a href="{{route('showAgencies')}}"><span class="title">Agencies</span></a></li>
 		        <li> <a href="{{route('showAgents')}}"><span class="title">Agents</span></a> </li>
-				<li class="">  <a href="{{route('contact')}}"><span class="title">Contact</span></a></li>
-				
-
+				<li class="">  <a href="{{route('contact')}}"><span class="title">Contact</span></a></li> 
+				@if(!\Auth::check())
 				<li><a href="{{route('user.login')}}"><span class="flaticon-user"></span> Login</a></li>
 				<li><a href="{{route('user.register')}}"><span class="flaticon-edit"></span> Register</a></li>
-				<li class="cl_btn">
-					<a class="btn btn-block btn-lg btn-thm circle" href="{{route('createProp')}}"><span class="flaticon-plus"></span> Create Listing</a>
-				</li>
+				@else
+				<li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="{{route('createProp')}}"><span class="flaticon-plus"></span> Create Listing</a></li>
+				@endif 
 			</ul>
 		</nav>
 	</div>

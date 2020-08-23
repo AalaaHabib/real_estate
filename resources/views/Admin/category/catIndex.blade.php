@@ -39,9 +39,10 @@ Category
 						<div class="col-lg-8 col-xl-8">
 							<div class="candidate_revew_select style2 text-right mb30-991">
 								<ul class="mb0">
-									<li class="list-inline-item">
-                                        <a href="{{route('adminCats.create')}}"> <button class="btn  my-2 my-sm-0 btn-info" >Add New Category</button></a>
+								<li class="list-inline-item">
+                                        <a href="{{route('adminCats.create')}}"> <button class="btn py-2  my-4 my-sm-0 btn-outline-danger" >Add New Category</button></a>
 									</li>
+									
 								</ul>
 							</div>
 						</div>
