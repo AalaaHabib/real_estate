@@ -135,9 +135,12 @@
 				<li><a href="{{route('showAgencies')}}"><span class="title">Agencies</span></a></li>
 		        <li> <a href="{{route('showAgents')}}"><span class="title">Agents</span></a> </li>
 				<li class="">  <a href="{{route('contact')}}"><span class="title">Contact</span></a></li>
+				@if(!\Auth::check())
 				<li><a href="{{route('user.login')}}"><span class="flaticon-user"></span> Login</a></li>
 				<li><a href="{{route('user.register')}}"><span class="flaticon-edit"></span> Register</a></li>
+				@else
 				<li class="cl_btn"><a class="btn btn-block btn-lg btn-thm circle" href="{{route('createProp')}}"><span class="flaticon-plus"></span> Create Listing</a></li>
+				@endif
 			</ul>
 		</nav>
 	</div>
